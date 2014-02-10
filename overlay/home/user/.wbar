@@ -1,0 +1,16 @@
+i: /usr/share/wbar/iconpack/wbar.osx/osxbarback.png
+c: wbar -bpress -above-desk -pos center -zoomf 1.3 -isize 72 -idist 4 -jumpf 1 -nanim 3 -balfa 25
+t: /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans-Bold.ttf/10
+
+i: /usr/share/icons/gnome/48x48/apps/terminal.png
+c: mrxvt
+t: terminal
+
+i: /usr/share/icons/gnome/48x48/apps/accessories-text-editor.png
+c: gvim -y -n
+t: editor
+
+i: /usr/share/icons/gnome/48x48/devices/network-wireless.png
+c: wicd-client --no-tray
+t: network
+

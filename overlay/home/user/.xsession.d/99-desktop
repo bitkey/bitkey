@@ -3,8 +3,12 @@ if which feh >/dev/null; then
 fi
 
 if which metacity >/dev/null; then
-    exec metacity --composite
+    metacity --composite &
+fi
+
+if which wbar >/dev/null; then
+    sleep 2
+    exec wbar
 else
     exec xterm
 fi
-
