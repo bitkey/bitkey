@@ -1,0 +1,6 @@
+#!/bin/bash -e
+
+url=$1
+proxy="http://localhost:1080;https://localhost:1443"
+chromium --incognito --proxy-server="$proxy" --app="$url" &
+
