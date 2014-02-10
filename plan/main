@@ -5,6 +5,7 @@
 
 #include "net"
 #include "system"
+#include "desktop"
 #include "apps"
 
 firmware-linux-free

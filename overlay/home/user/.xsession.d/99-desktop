@@ -1,0 +1,6 @@
+if which metacity >/dev/null; then
+    exec metacity --composite
+else
+    exec xterm
+fi
+
