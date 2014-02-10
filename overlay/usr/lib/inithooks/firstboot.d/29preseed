@@ -1,0 +1,13 @@
+#!/bin/bash -e
+# generic preseeding of inithooks.conf if it doesn't exist
+
+[ -e $INITHOOKS_CONF ] && exit 0
+
+MASTERPASS=$(mcookie | cut --bytes 1-8)
+
+cat>$INITHOOKS_CONF<<EOF
+export ROOT_PASS=$MASTERPASS
+export USER_PASS=$MASTERPASS
+export HUB_APIKEY=SKIP
+EOF
+
