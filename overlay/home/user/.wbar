@@ -10,6 +10,10 @@ i: /usr/local/share/icons/electrum-offline.png
 c: electrum --offline --concealed >/dev/null
 t: electrum (offline)
 
+i: /usr/share/pixmaps/chromium.png
+c: chromium --incognito
+t: browser
+
 i: /usr/share/icons/gnome/48x48/apps/terminal.png
 c: mrxvt
 t: terminal
