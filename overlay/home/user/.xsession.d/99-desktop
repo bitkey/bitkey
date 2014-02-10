@@ -1,3 +1,7 @@
+if which feh >/dev/null; then
+    feh --bg-scale /usr/local/share/backgrounds/default.jpg &
+fi
+
 if which metacity >/dev/null; then
     exec metacity --composite
 else
