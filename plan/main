@@ -1,2 +1,13 @@
-#include <turnkey/desktop>
+#include <x11>
+#include <boot>
+#include <laptop>
+#include <hwdetect>
+
+#include "net"
+#include "system"
+#include "apps"
+
+firmware-linux-free
+firmware-linux-nonfree
+firmware-iwlwifi
 

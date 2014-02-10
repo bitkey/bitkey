@@ -1,0 +1,26 @@
+inithooks
+python-dialog
+turnkey-pylib
+
+gnupg
+gnupg-agent
+pinentry-gtk2
+
+cron
+rsyslog
+iptables
+
+sudo
+less
+unzip
+psmisc
+procps
+whiptail
+localepurge
+lsb-release
+console-tools
+console-setup
+bash-completion
+libperl4-corelibs-perl  /* lsof dep instead of old perl version */
+lsof
+
