@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+SOURCES_LIST=/etc/apt/sources.list.d
+sed -i "/contrib/ s/^/# /" $SOURCES_LIST/sources.list
+sed -i "/contrib/ s/^/# /" $SOURCES_LIST/security.sources.list
+
+FIRSTBOOT=/usr/lib/inithooks/firstboot.d
+sed -i "/boot=casper/ s/^/# /" $FIRSTBOOT/95secupdates
+
