@@ -1,0 +1,12 @@
+#!/bin/bash -e
+
+TEXT="This session is non-persistent, nothing is saved! Please verify you have backups of your wallet and/or seed phrase and password before proceeding. Are you sure you want to shutdown?"
+
+zenity \
+    --title "System Shutdown" \
+    --ok-label="Yes, shutdown" \
+    --cancel-label="Cancel" \
+    --question --text "$TEXT"
+
+[ "$?" == "0" ] && sudo halt -n -f -p
+
