@@ -1,0 +1,115 @@
+# For an example configuration file, you probably want to look at mrxvtrc.sample
+# (provided in /usr/share/doc/mrxvt-common/examples), and not this file.
+#
+# Preferably avoid making modifications to this file directly, but make
+# modifications to your user config file (~/.mrxvtrc) instead. Remember that
+# macros can be deleted by assigning "Dummy" to the keystroke.
+#
+# Starting mrxvt with --noSysConfig will disable reading this file completely.
+
+## Appearance
+
+Mrxvt.hideButtons:              true
+
+Mrxvt.bottomTabbar:             true
+Mrxvt.autohideTabbar:           true
+Mrxvt.minVisibleTabs:           8
+Mrxvt.itabBackground:           #101010
+Mrxvt.itabForeground:           #909090
+Mrxvt.tabBackground:            #000000
+Mrxvt.tabForeground:            #ffffff
+Mrxvt.syncTabTitle:             true
+Mrxvt.highlightTabOnBell:       true
+
+Mrxvt.scrollBar:                true
+Mrxvt.scrollbarRight:           true
+Mrxvt.scrollbarStyle:           rxvt
+Mrxvt.scrollTtyOutputInhibit:   true
+Mrxvt.scrollTtyKeypress:        true
+Mrxvt.scrollColor:              #808080
+Mrxvt.troughColor:              #202020
+Mrxvt.saveLines:                10000
+
+Mrxvt.xft:                      1
+Mrxvt.xftFont:                  DejaVu Sans Mono
+Mrxvt.xftWeight:                bold
+Mrxvt.xftSize:                  12
+Mrxvt.xftAntialias:             1
+Mrxvt.xftNomFont:               1
+Mrxvt.xftPFont:                 DejaVu Sans
+Mrxvt.xftPSize:                 10
+
+Mrxvt.cursorBlink:              true
+Mrxvt.cursorColor:              #00ff00
+Mrxvt.cursorColor2:             #000000
+Mrxvt.pointerBlank:             true
+Mrxvt.pointerBlankDelay:        10
+
+Mrxvt.appIcon:                  /usr/share/pixmaps/mrxvt.xpm
+Mrxvt.tabTitle:                 shell@host
+Mrxvt.title:                    Terminal
+Mrxvt.internalBorder:           2
+Mrxvt.cutChars:                 :=/~#@?%&_-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0abcdefghijklmnopqrstuvwxyz
+Mrxvt.protectSecondary:         true
+Mrxvt.loginShell:               true
+Mrxvt.holdExit:                 0
+
+Mrxvt.background:               #000000
+Mrxvt.foreground:               #f1f1f1
+Mrxvt.ufBackground:             #222222
+Mrxvt.backgroundFade:           50
+
+Mrxvt.color0:                   black
+Mrxvt.color1:                   red3
+Mrxvt.color2:                   green3
+Mrxvt.color3:                   yellow3
+Mrxvt.color4:                   blue
+Mrxvt.color5:                   magenta3
+Mrxvt.color6:                   cyan3
+Mrxvt.color7:                   gray90
+Mrxvt.color8:                   gray50
+Mrxvt.color9:                   red
+Mrxvt.color10:                  green
+Mrxvt.color11:                  yellow
+Mrxvt.color12:                  #5c5cff
+Mrxvt.color13:                  magenta
+Mrxvt.color14:                  cyan
+Mrxvt.color15:                  white
+Mrxvt.colorBD:                  #00afaf
+Mrxvt.colorUL:                  #00af00
+Mrxvt.highlightColor:           #303060
+
+## Keybindings
+
+Mrxvt.macro.Primary+Shift+Prior:        Scroll -1p
+Mrxvt.macro.Primary+Shift+Next:         Scroll +1p
+Mrxvt.macro.Primary+Shift+Up:           Scroll -1
+Mrxvt.macro.Primary+Shift+Down:         Scroll +1
+Mrxvt.macro.Primary+Shift+Home:         Scroll -1000000
+Mrxvt.macro.Primary+Shift+End:          Scroll +1000000
+
+Mrxvt.macro.Shift+Insert:               Paste
+
+Mrxvt.macro.Ctrl+equal:                 ResizeFont +1
+Mrxvt.macro.Ctrl+minus:                 ResizeFont -1
+Mrxvt.macro.Ctrl+Shift+plus:            ResizeFont +1
+Mrxvt.macro.Ctrl+Shift+underscore:      ResizeFont -1
+
+Mrxvt.macro.Ctrl+t:                     NewTab -
+Mrxvt.macro.Ctrl+Alt+n:                 NewTab -
+Mrxvt.macro.Ctrl+w:                     Close 0
+Mrxvt.macro.Ctrl+F4:                    Close 0
+
+Mrxvt.macro.Ctrl+BackSpace:             GotoTab 0
+Mrxvt.macro.Ctrl+Prior:                 GotoTab -1
+Mrxvt.macro.Ctrl+Next:                  GotoTab +1
+Mrxvt.macro.Ctrl+Left:                  GotoTab -1
+Mrxvt.macro.Ctrl+Right:                 GotoTab +1
+Mrxvt.macro.Ctrl+h:                     GotoTab -1
+Mrxvt.macro.Ctrl+l:                     GotoTab +1
+
+Mrxvt.macro.Ctrl+Shift+Prior:           MoveTab -1
+Mrxvt.macro.Ctrl+Shift+Next:            MoveTab +1
+Mrxvt.macro.Ctrl+Shift+Left:            MoveTab -1
+Mrxvt.macro.Ctrl+Shift+Right:           MoveTab +1
+
