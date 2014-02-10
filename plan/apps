@@ -3,3 +3,7 @@ vim-gtk
 thunar
 thunar-volman
 gvfs
+
+python-setuptools       /* electrum: installation */
+python-sip              /* electrum: virtual package providing sip-api-8.1 */
+python-qt4              /* electrum: qt gui interface */

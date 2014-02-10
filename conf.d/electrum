@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+SRC=/usr/local/src
+
+# install electrum deps
+easy_install $SRC/ecdsa-*.tar.gz
+easy_install $SRC/slowaes-*.tar.gz
+rm $SRC/{ecdsa-*.tar.gz,slowaes-*.tar.gz}
+
+# install electrum
+tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
+rm $SRC/Electrum-*.tar.gz
+cd $SRC/Electrum-*
+python setup.py install
+cd -
+rm -rf $SRC/Electrum-*
+
+# convenience bookmark in filemanager
+cat >>/home/user/.gtk-bookmarks<<EOF
+file:///home/user/.electrum/wallets
+EOF
+
