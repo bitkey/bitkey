@@ -4,10 +4,12 @@
 [ -e $INITHOOKS_CONF ] && exit 0
 
 MASTERPASS=$(mcookie | cut --bytes 1-8)
+grep -qs offline-mode /proc/cmdline && SEC_UPDATES=SKIP
 
 cat>$INITHOOKS_CONF<<EOF
 export ROOT_PASS=$MASTERPASS
 export USER_PASS=$MASTERPASS
+export SEC_UPDATES=$SEC_UPDATES
 export HUB_APIKEY=SKIP
 EOF
 
