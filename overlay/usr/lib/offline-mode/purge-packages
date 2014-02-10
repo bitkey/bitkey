@@ -1,0 +1,9 @@
+#!/bin/sh
+
+LISTDIR="$(dirname $0)/purge-packages.list.d"
+[ -e $LISTDIR ] || exit 0
+
+for f in $(ls $LISTDIR); do
+    DEBIAN=noninteractive apt-get -y purge $(cat $LISTDIR/$f)
+done
+
