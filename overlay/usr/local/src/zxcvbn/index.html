@@ -1,0 +1,62 @@
+<!--
+https://github.com/lowe/zxcvbn
+http://tech.dropbox.com/?p=165
+-->
+<html>
+  <head>
+    <title>zxcvbn - password strength estimation</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="mustache.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="zxcvbn.js"></script>
+  </head>
+  <body>
+    <style type="text/css">
+
+      body {
+        font-family: monospace;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      #search-results {
+        margin-top: 30px;
+      }
+      .match-sequence table {
+        display: inline;
+        margin-right: 30px;
+      }
+      .match-sequence {
+        margin-bottom: 100px;
+      }
+      .match-sequence > table:nth-child(odd) {
+        background-color: #ccc;
+      }
+      .match-sequence > table:nth-child(even) {
+        background-color: #eee;
+      }
+      #examples-container {
+        margin-top: 200px;
+      }
+
+    </style>
+    <h1>zxcvbn - password strength estimation</h1>
+
+    <center>
+      <p>enter password:</p>
+      <input id="search-bar" type="text" size="50" />
+    </center>
+
+    <div id="search-results">
+    </div>
+
+    <!--
+    <div id="examples-container">
+      <h2 id="examples">examples</h2>
+      <div id="results">
+    </div>
+    -->
+
+  </body>
+</html>

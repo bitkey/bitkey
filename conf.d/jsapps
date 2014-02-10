@@ -1,0 +1,7 @@
+#!/bin/bash -e
+
+SRC=/usr/local/src
+
+tar -zxf $SRC/zxcvbn/libs.tar.gz -C $SRC/zxcvbn
+rm $SRC/zxcvbn/libs.tar.gz
+
