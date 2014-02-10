@@ -34,6 +34,10 @@ i: /usr/share/icons/gnome/48x48/places/user-home.png
 c: thunar
 t: files
 
+i: /usr/share/icons/gnome/48x48/apps/help-browser.png
+c: chromium-offline-app file:///usr/local/share/doc/bluestone-help/index.html
+t: help
+
 i: /usr/share/icons/gnome/48x48/devices/network-wireless.png
 c: wicd-client --no-tray
 t: network
