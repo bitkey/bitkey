@@ -10,6 +10,10 @@ i: /usr/share/icons/gnome/48x48/apps/accessories-text-editor.png
 c: gvim -y -n
 t: editor
 
+i: /usr/share/icons/gnome/48x48/places/user-home.png
+c: thunar
+t: files
+
 i: /usr/share/icons/gnome/48x48/devices/network-wireless.png
 c: wicd-client --no-tray
 t: network
