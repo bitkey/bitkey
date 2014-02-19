@@ -15,8 +15,3 @@ python setup.py install
 cd -
 rm -rf $SRC/Electrum-*
 
-# convenience bookmark in filemanager
-cat >>/home/user/.gtk-bookmarks<<EOF
-file:///home/user/.electrum/wallets
-EOF
-
