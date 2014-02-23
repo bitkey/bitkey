@@ -1,9 +1,13 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Setup system for offline mode..."
+DESCRIPTION="Setup system for bluestone selected boot option..."
 
-grep -qs offline-mode /proc/cmdline || exit 0
+for x in $(cat /proc/cmdline); do
+    case $x in
+        bluestone=*) mode="${x#bluestone=}";;
+    esac
+done
 
 . /scripts/casper-functions
 
@@ -20,10 +24,10 @@ prereqs)
     ;;
 esac
 
-if [ -e /root/usr/lib/offline-mode ]; then
+if [ -e /root/usr/lib/bluestone.d ]; then
     log_begin_msg "$DESCRIPTION"
     mount -t proc proc-chroot /root/proc
-    chroot /root sh -c "run-parts /usr/lib/offline-mode"
+    chroot /root sh -c "run-parts -a $mode /usr/lib/bluestone.d"
     umount /root/proc
     log_end_msg
 fi

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ "$1" = "cold-offline" ] && SEC_UPDATES=SKIP
+MASTERPASS=$(mcookie | cut --bytes 1-8)
+
+cat>/etc/inithooks.conf<<EOF
+export ROOT_PASS=$MASTERPASS
+export USER_PASS=$MASTERPASS
+export SEC_UPDATES=$SEC_UPDATES
+export HUB_APIKEY=SKIP
+EOF
+

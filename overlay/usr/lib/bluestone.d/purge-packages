@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ "$1" = "cold-offline" ] || exit 0
+DEBIAN=noninteractive apt-get -y purge $(cat $(dirname $0)/purge-packages.list)
+
