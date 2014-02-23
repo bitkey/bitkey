@@ -1,0 +1,2 @@
+<?xml encoding="UTF-8" version="1.0"?>
+<actions><action><icon>gnome-terminal</icon><name>Open terminal here</name><command>mrxvt --workingDirectory %d</command><description>Open terminal here</description><patterns>*</patterns><directories/><text-files/></action></actions>
