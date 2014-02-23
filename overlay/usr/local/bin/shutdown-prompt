@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-TEXT="This session is non-persistent. Any data not saved to an external USB device will be lost.Are you sure you want to shutdown?"
+TEXT="This session is non-persistent. Any data not saved to an external USB device will be lost. Are you sure you want to shutdown?"
 
 zenity \
     --title "System Shutdown" \
