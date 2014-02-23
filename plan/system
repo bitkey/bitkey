@@ -2,6 +2,7 @@ inithooks
 python-dialog
 turnkey-pylib
 
+luks
 gnupg
 gnupg-agent
 pinentry-gtk2

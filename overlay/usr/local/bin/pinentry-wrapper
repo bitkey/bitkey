@@ -1,0 +1,122 @@
+#!/usr/bin/env python
+"""
+Options:
+    --confirm       confirm password
+    --text=         text to display (default: Enter password)
+    --errortext=    error text to display (default: None)
+"""
+
+import os
+import sys
+import getopt
+import popen2
+
+def fatal(e):
+    print >> sys.stderr, 'Error: ' + str(e)
+    sys.exit(1)
+
+def usage(e=None):
+    if e:
+        print >> sys.stderr, 'Error: ' + str(e)
+
+    cmd = os.path.basename(sys.argv[0])
+    print >> sys.stderr, 'Syntax: %s [--opts]' % cmd
+    print >> sys.stderr, __doc__.strip()
+
+    sys.exit(1)
+
+class PinEntryError(Exception):
+    def __init__(self, error, code=None):
+        Exception.__init__(self, error, code)
+
+        self.error = error
+        self.code = code
+
+class PinEntry(object):
+    def __init__(self, title="pinentry"):
+        self._p = popen2.Popen3("pinentry")
+        self._p.fromchild.readline()
+
+        self._cmd("OPTION ttyname=%s" % os.getenv("TTY"))
+        self._cmd("OPTION lc-ctype=%s" % os.getenv("LANG"))
+        self._cmd("SETTITLE %s" % title)
+
+    def _cmd(self, command):
+        self._p.tochild.write(command + "\n")
+        self._p.tochild.flush()
+
+        response = ""
+        while "OK" not in response and "ERR" not in response:
+            response += self._p.fromchild.readline()
+
+        response = response.split()
+        if response[0] == "ERR":
+            raise PinEntryError(response[2], response[1])
+
+        return response
+
+    def getpin(self, prompt="Passphrase", text="Enter passphrase", errortext=None):
+        self._cmd("SETDESC %s" % text)
+        self._cmd("SETPROMPT %s" % prompt)
+        if errortext:
+            self._cmd("SETERROR %s" % errortext)
+
+        response = self._cmd("GETPIN")
+        if "OK" not in response:
+            raise PinEntryError(response)
+
+        return " ".join(response[1:response.index("OK")])
+
+    def message(self, text):
+        self._cmd("SETDESC %s" % text)
+        self._cmd("MESSAGE")
+
+def get_passphrase(text='Enter passphrase', errortext=None):
+    p = PinEntry()
+    return p.getpin(text=text, errortext=errortext)
+
+def get_passphrase_confirm(text='Enter passphrase'):
+    while True:
+        p = PinEntry()
+        passphrase = p.getpin(text=text)
+
+        if passphrase == p.getpin(text='Confirm passphrase'):
+            break
+
+        p.message('Passphrase mismatch')
+
+    return passphrase
+
+def main():
+    try:
+        l_opts = ['help', 'confirm', 'text=', 'errortext=']
+        opts, args = getopt.gnu_getopt(sys.argv[1:], 'h', l_opts)
+    except getopt.GetoptError, e:
+        usage(e)
+
+    confirm = False
+    text = 'Enter passphrase'
+    errortext = None
+    for opt, val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+
+        if opt == '--confirm':
+            confirm = True
+
+        if opt == '--text':
+            text = val
+
+        if opt == '--errortext':
+            errortext = val
+
+    if confirm:
+        print get_passphrase_confirm(text=text)
+
+    else:
+        print get_passphrase(text=text, errortext=errortext)
+
+
+if __name__ == '__main__':
+    main()
+

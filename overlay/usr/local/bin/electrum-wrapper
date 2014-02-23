@@ -1,0 +1,110 @@
+#!/bin/bash -e
+
+fatal() {
+    zenity --error --text "$@"
+    exit 1
+}
+
+usage() {
+    echo "syntax: $(basename $0) cold-offline|cold-online|hot-online"
+    exit 1
+}
+
+locate_storage_path() {
+    dirname=$1
+    filename=$2
+    for d in $(ls /media); do
+        if [ -e "/media/$d/$dirname/$filename" ]; then
+            echo /media/$d/$dirname
+            return
+        fi
+    done
+
+    for d in $(ls /media); do
+        if [ -d "/media/$d/$dirname" ]; then
+            echo /media/$d/$dirname
+            return
+        fi
+    done
+
+    for d in $(ls /media); do
+        if mountpoint -q /media/$d; then
+            mkdir -p /media/$d/$dirname
+            echo /media/$d/$dirname
+            return
+        fi
+    done
+}
+
+if [[ "$#" != "1" ]]; then
+    usage
+fi
+
+mode=$1
+case "$mode" in
+    cold-offline|cold-online|hot-online) ;;
+    *) fatal "unsupported mode: $mode"
+esac
+
+# verify electrum/electrum-wrapper isn't running
+if pidof -x electrum electrum-wrapper >/dev/null; then
+    fatal "electrum is already running..."
+fi
+
+# locate and setup storage
+mount_path="/mnt/bluestone-data"
+storage_path=$(locate_storage_path bluestone-data $mode)
+storage_file=$storage_path/$mode
+
+if [ -z $storage_path ]; then
+    error="Unable to locate USB device to use as persistent storage.\n"
+    error+="Please insert a USB device and try again."
+    fatal "$error"
+fi
+
+# plaintext seedless watch wallet (cold-online)
+if [ "$mode" == "cold-online" ]; then
+    if [ -e "$storage_file" ]; then
+        electrum --concealed --labels --wallet=$storage_file &
+        exit 0
+    fi
+    fatal "manual cold-online wallet creation is currently not supported."
+fi
+
+# create and or mount encrypted storage (cold-offline / hot-online)
+if [ ! -e "$storage_file" ]; then
+    passwd_text="Enter new passphrase for $storage_file"
+    passwd=$(pinentry-wrapper --confirm --text="$passwd_text")
+
+    dd if=/dev/zero of=$storage_file bs=1M count=5
+    echo $passwd | sudo luks-mkfs -f --fs=ext2 $storage_file
+    echo $passwd | sudo luks-mount $storage_file $mount_path
+
+else
+    error_text=""
+    while true; do
+        passwd_text="Enter passphrase for $storage_file"
+        passwd=$(pinentry-wrapper --text="$passwd_text" --errortext="$error_text")
+        if echo $passwd | sudo luks-mount $storage_file $mount_path; then
+            break
+        fi
+        error_text="Invalid passphrase, please try again"
+    done
+fi
+
+# start electrum in foreground
+sudo chown -R user:user $mount_path
+wallet_path=$mount_path/$mode
+[ "$mode" == "cold-offline" ] && extra_args="--offline"
+electrum --concealed --labels $extra_args --wallet=$wallet_path
+
+# create seedless watch wallet (cold-online)
+if [ -e "$wallet_path" ] && [ ! -e "$storage_path/cold-online" ]; then
+    echo y | electrum deseed -w $wallet_path
+    mv $wallet_path.seedless $storage_path/cold-online
+fi
+
+# umount encrypted storage
+sync && sleep 2
+sudo luks-umount $mount_path
+
