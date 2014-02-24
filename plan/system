@@ -7,7 +7,6 @@ gnupg
 gnupg-agent
 pinentry-gtk2
 
-cron
 rsyslog
 iptables
 

@@ -5,7 +5,6 @@ netbase
 iproute
 ntpdate
 ifupdown
-cron-apt
 net-tools
 traceroute
 bind9-host
