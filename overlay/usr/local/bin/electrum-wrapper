@@ -46,8 +46,8 @@ case "$mode" in
     *) fatal "unsupported mode: $mode"
 esac
 
-# verify electrum/electrum-wrapper isn't running
-if pidof -x electrum electrum-wrapper >/dev/null; then
+# verify electrum isn't running
+if pidof -x electrum >/dev/null; then
     fatal "electrum is already running..."
 fi
 
@@ -55,6 +55,7 @@ fi
 mount_path="/mnt/bluestone-data"
 storage_path=$(locate_storage_path bluestone-data $mode)
 storage_file=$storage_path/$mode
+sudo chown user:user $storage_path
 
 if [ -z $storage_path ]; then
     error="Unable to locate USB device to use as persistent storage.\n"
