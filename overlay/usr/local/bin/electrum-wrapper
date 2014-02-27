@@ -14,23 +14,26 @@ locate_storage_path() {
     dirname=$1
     filename=$2
     for d in $(ls /media); do
-        if [ -e "/media/$d/$dirname/$filename" ]; then
-            echo /media/$d/$dirname
+        storage_path="/media/$d/$dirname"
+        if [ -e $storage_path/$filename ] && [ -w $storage_path/$filename ]; then
+            echo $storage_path
             return
         fi
     done
 
     for d in $(ls /media); do
-        if [ -d "/media/$d/$dirname" ]; then
-            echo /media/$d/$dirname
+        storage_path="/media/$d/$dirname"
+        if [ -d $storage_path ] && [ -w $storage_path ]; then
+            echo $storage_path
             return
         fi
     done
 
     for d in $(ls /media); do
-        if mountpoint -q /media/$d; then
-            mkdir -p /media/$d/$dirname
-            echo /media/$d/$dirname
+        storage_path="/media/$d/$dirname"
+        if mountpoint -q /media/$d && [ -w "/media/$d" ]; then
+            mkdir -p $storage_path
+            echo $storage_path
             return
         fi
     done
