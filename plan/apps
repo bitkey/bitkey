@@ -5,6 +5,7 @@ myspell-en-us
 thunar
 thunar-volman
 gvfs
+eject
 
 python-setuptools       /* electrum: installation */
 python-sip              /* electrum: virtual package providing sip-api-8.1 */
