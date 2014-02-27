@@ -1,0 +1,208 @@
+#!/usr/bin/env python
+# Copyright (c) 2014 Alon Swartz <alon@turnkeylinux.org>
+
+"""
+Options:
+    --hide-strength     hide passphrase strength estimations
+    --confirm           confirm passphrase
+    --title=            title text (default: Passphrase)
+    --text=             dialog text (default: Enter passphrase)
+    --error=            error text to display (default: None)
+"""
+
+import os
+import sys
+import gtk
+import getopt
+
+import zxcvbn
+
+def fatal(e):
+    print >> sys.stderr, 'Error: ' + str(e)
+    sys.exit(1)
+
+def usage(e=None):
+    if e:
+        print >> sys.stderr, 'Error: ' + str(e)
+
+    cmd = os.path.basename(sys.argv[0])
+    print >> sys.stderr, 'Syntax: %s [--opts]' % cmd
+    print >> sys.stderr, __doc__.strip()
+
+    sys.exit(1)
+
+def _hbox(label_value, widget_type):
+    label = gtk.Label(label_value)
+    label.set_size_request(120, 10)
+    label.set_alignment(1.0, 0.5)
+    label.show()
+
+    if widget_type == 'label':
+        widget = gtk.Label('')
+        widget.set_alignment(0, 0.5)
+
+    elif widget_type == 'entry':
+        widget = gtk.Entry()
+        widget.set_visibility(False)
+
+    elif widget_type == 'progressbar':
+        widget = gtk.ProgressBar()
+
+    widget.set_size_request(300, -1)
+    widget.show()
+
+    hbox = gtk.HBox()
+    hbox.pack_start(label, False, False, 10)
+    hbox.pack_start(widget, False, False, 10)
+    hbox.show()
+
+    return widget, hbox
+
+
+class Passphrase(object):
+    def __init__(self, parent=None, title='', text='', error=None, strength=True):
+        self.dialog = gtk.MessageDialog(
+            parent,
+            gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
+            gtk.MESSAGE_QUESTION,
+            gtk.BUTTONS_OK_CANCEL,
+            text)
+
+        self.dialog.set_title(title)
+        self.dialog.get_image().set_visible(False)
+
+        self.passphrase1, hbox = _hbox('Passphrase', 'entry')
+        self.passphrase1.connect('changed', self._passphrase1_changed)
+        self.passphrase1.connect('activate', self._passphrase1_activate)
+        self.dialog.vbox.pack_start(hbox, False, True, 0)
+
+        if error:
+            error_label, hbox = _hbox('', 'label')
+            error_label.set_markup('<span foreground="red">%s</span>' % error)
+            self.dialog.vbox.pack_start(hbox, False, True, 0)
+
+        self.strength = strength
+        if self.strength:
+            self.cracktime, hbox = _hbox('Crack time', 'label')
+            self.dialog.vbox.pack_end(hbox, False, True, 5)
+
+            self.entropy, hbox = _hbox('Entropy', 'label')
+            self.dialog.vbox.pack_end(hbox, False, True, 5)
+
+            self.score, hbox = _hbox('Score', 'progressbar')
+            self.dialog.vbox.pack_end(hbox, False, True, 5)
+
+        self.okbutton = self.dialog.get_widget_for_response(gtk.RESPONSE_OK)
+        self.okbutton.set_sensitive(False)
+
+    def _passphrase1_changed(self, widget):
+        passphrase = widget.get_text()
+
+        if passphrase:
+            self.okbutton.set_sensitive(True)
+        else:
+            self.okbutton.set_sensitive(False)
+
+        if self.strength:
+            info = zxcvbn.password_strength(passphrase)
+            self.score.set_fraction(info['score'] * 0.25)
+            self.entropy.set_text(str(info['entropy']))
+            self.cracktime.set_text(str(info['crack_time_display']))
+
+
+    def _passphrase1_activate(self, widget):
+        if widget.get_text():
+            self.dialog.response(gtk.RESPONSE_OK)
+
+    def run(self):
+        self.dialog.show()
+        response = self.dialog.run()
+        passphrase = self.passphrase1.get_text()
+        self.dialog.destroy()
+
+        if response != gtk.RESPONSE_CANCEL:
+            return passphrase
+
+
+class PassphraseConfirm(Passphrase):
+    def __init__(self, *args, **kwargs):
+        super(PassphraseConfirm, self).__init__(*args, **kwargs)
+
+        self.passphrase2, hbox = _hbox('Confirm', 'entry')
+        self.passphrase2.connect('changed', self._passphrase2_changed)
+        self.passphrase2.connect('activate', self._passphrase2_activate)
+        self.dialog.vbox.pack_start(hbox, False, True, 0)
+
+    def _passphrase1_changed(self, widget):
+        if self.strength:
+            info = zxcvbn.password_strength(widget.get_text())
+            self.score.set_fraction(info['score'] * 0.25)
+            self.entropy.set_text(str(info['entropy']))
+            self.cracktime.set_text(str(info['crack_time_display']))
+
+        self.passphrase2.set_text('')
+
+    def _passphrase1_activate(self, widget):
+        pass
+
+    def _passphrase2_changed(self, widget):
+        passphrase1 = self.passphrase1.get_text()
+        passphrase2 = self.passphrase2.get_text()
+
+        if passphrase1 and passphrase1 == passphrase2:
+            self.okbutton.set_sensitive(True)
+        else:
+            self.okbutton.set_sensitive(False)
+
+    def _passphrase2_activate(self, widget):
+        if self.okbutton.get_sensitive():
+            self.dialog.response(gtk.RESPONSE_OK)
+
+
+def main():
+    try:
+        l_opts = ['help', 'hide-strength', 'confirm', 'title=', 'text=', 'error=']
+        opts, args = getopt.gnu_getopt(sys.argv[1:], 'h', l_opts)
+    except getopt.GetoptError, e:
+        usage(e)
+
+    kwargs = {
+        'strength': True,
+        'title': 'Passphrase',
+        'text': 'Enter passphrase',
+        'error': None,
+    }
+    confirm = False
+    for opt, val in opts:
+        if opt in ('-h', '--help'):
+            usage()
+
+        elif opt == '--confirm':
+            confirm = True
+
+        elif opt == '--hide-strength':
+            kwargs['strength'] = False
+
+        elif opt == '--title':
+            kwargs['title'] = val
+
+        elif opt == '--text':
+            kwargs['text'] = val
+
+        elif opt == '--error':
+            kwargs['error'] = val
+
+    p = PassphraseConfirm(**kwargs) if confirm else Passphrase(**kwargs)
+    passphrase = p.run()
+
+    if passphrase == None:
+        fatal("cancelled by user")
+
+    print passphrase
+
+
+if __name__ == '__main__':
+    main()
+
+
+
