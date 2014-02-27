@@ -77,7 +77,7 @@ fi
 # create and or mount encrypted storage (cold-offline / hot-online)
 if [ ! -e "$storage_file" ]; then
     passwd_text="Enter new passphrase for $storage_file"
-    passwd=$(pinentry-wrapper --confirm --text="$passwd_text")
+    passwd=$(passphrase-zxcvbn --confirm --text="$passwd_text")
 
     dd if=/dev/zero of=$storage_file bs=1M count=5
     echo $passwd | sudo luks-mkfs -f --fs=ext2 $storage_file
@@ -87,7 +87,7 @@ else
     error_text=""
     while true; do
         passwd_text="Enter passphrase for $storage_file"
-        passwd=$(pinentry-wrapper --text="$passwd_text" --errortext="$error_text")
+        passwd=$(passphrase-zxcvbn --hide-strength --text="$passwd_text" --error="$error_text")
         if echo $passwd | sudo luks-mount $storage_file $mount_path; then
             break
         fi
