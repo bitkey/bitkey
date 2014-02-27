@@ -6,5 +6,11 @@ glib-compile-schemas /usr/share/glib-2.0/schemas
 # update db for overlayed desktop files
 update-desktop-database
 
-# set permissions on user's home
+# set ownership on user's home
 chown -R user:user /home/user
+
+# set ownership of automounted usb devices
+CONF=/etc/usbmount/usbmount.conf
+MOUNTOPTIONS="uid=user,gid=user,sync,noexec,nodev,noatime,nodiratime"
+sed -i "s|^MOUNTOPTIONS=.*|MOUNTOPTIONS=\"$MOUNTOPTIONS\"|" $CONF
+
