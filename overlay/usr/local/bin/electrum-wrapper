@@ -55,7 +55,6 @@ fi
 mount_path="/mnt/bluestone-data"
 storage_path=$(locate_storage_path bluestone-data $mode)
 storage_file=$storage_path/$mode
-sudo chown user:user $storage_path
 
 if [ -z $storage_path ]; then
     error="Unable to locate USB device to use as persistent storage.\n"
