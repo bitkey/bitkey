@@ -54,6 +54,11 @@ if pidof -x electrum >/dev/null; then
     fatal "electrum is already running..."
 fi
 
+# verify (another) electrum-wrapper isn't running
+if pidof -x electrum-wrapper -o %PPID >/dev/null; then
+    fatal "electrum-wrapper is already running..."
+fi
+
 # locate and setup storage
 mount_path="/mnt/bluestone-data"
 storage_path=$(locate_storage_path bluestone-data $mode)
