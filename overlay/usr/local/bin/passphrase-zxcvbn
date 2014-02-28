@@ -187,7 +187,7 @@ def main():
             kwargs['title'] = val
 
         elif opt == '--text':
-            kwargs['text'] = val
+            kwargs['text'] = val.decode('string_escape')
 
         elif opt == '--error':
             kwargs['error'] = val
