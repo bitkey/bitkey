@@ -75,8 +75,8 @@ if [ "$mode" == "cold-online" ]; then
 fi
 
 # create and or mount encrypted storage (cold-offline / hot-online)
+passwd_text="Enter passphrase for encrypted wallet storage:\n$storage_file"
 if [ ! -e "$storage_file" ]; then
-    passwd_text="Enter new passphrase for $storage_file"
     passwd=$(passphrase-zxcvbn --confirm --text="$passwd_text")
 
     dd if=/dev/zero of=$storage_file bs=1M count=5
@@ -84,14 +84,13 @@ if [ ! -e "$storage_file" ]; then
     echo $passwd | sudo luks-mount $storage_file $mount_path
 
 else
-    error_text=""
+    error=""
     while true; do
-        passwd_text="Enter passphrase for $storage_file"
-        passwd=$(passphrase-zxcvbn --hide-strength --text="$passwd_text" --error="$error_text")
+        passwd=$(passphrase-zxcvbn --hide --text="$passwd_text" --error="$error")
         if echo $passwd | sudo luks-mount $storage_file $mount_path; then
             break
         fi
-        error_text="Invalid passphrase, please try again"
+        error="Invalid passphrase, please try again"
     done
 fi
 
