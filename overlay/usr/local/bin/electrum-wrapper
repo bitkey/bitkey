@@ -120,5 +120,10 @@ fi
 
 # umount encrypted storage
 sync && sleep 2
-sudo luks-umount $mount_path
+while true; do
+    if sudo luks-umount $mount_path; then
+        break
+    fi
+    zenity --error --text "unable to unmount encrypted storage. please close all programs that may be blocking."
+done
 
