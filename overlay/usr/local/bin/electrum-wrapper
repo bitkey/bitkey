@@ -10,6 +10,10 @@ usage() {
     exit 1
 }
 
+info() {
+    echo -n "$@" > $infofile
+}
+
 locate_storage_path() {
     dirname=$1
     filename=$2
@@ -67,7 +71,14 @@ if mountpoint -q $mount_path; then
     fatal "$mount_path is currently in use...\nTip: sudo luks-umount $mount_path"
 fi
 
+# setup info dialog
+infofile=$(tempfile)
+info "loading..."
+info-dialog --title="electrum-wrapper" $infofile &
+trap "rm -f -- '$infofile'" INT TERM EXIT
+
 # locate and setup storage
+info "searching for persistent storage..."
 storage_path=$(locate_storage_path $storage_dirname $mode)
 storage_file=$storage_path/$mode
 
@@ -91,14 +102,20 @@ passwd_text="Enter passphrase for encrypted wallet storage:\n$storage_file"
 if [ ! -e "$storage_file" ]; then
     passwd=$(passphrase-zxcvbn --confirm --text="$passwd_text")
 
+    info "creating $storage_file loopback..."
     dd if=/dev/zero of=$storage_file bs=1M count=5
+
+    info "creating $storage_file filesystem..."
     echo $passwd | sudo luks-mkfs -f --fs=ext2 $storage_file
+
+    info "mounting $storage_file..."
     echo $passwd | sudo luks-mount $storage_file $mount_path
 
 else
     error=""
     while true; do
         passwd=$(passphrase-zxcvbn --hide --text="$passwd_text" --error="$error")
+        info "attempting to mount $storage_file ..."
         if echo $passwd | sudo luks-mount $storage_file $mount_path; then
             break
         fi
@@ -106,20 +123,32 @@ else
     done
 fi
 
+# close info dialog
+rm -f $infofile
+
 # start electrum in foreground
 sudo chown -R user:user $mount_path
 wallet_path=$mount_path/$mode
 [ "$mode" == "cold-offline" ] && extra_args="--offline"
 electrum --concealed --labels $extra_args --wallet=$wallet_path
 
+# setup info dialog
+infofile=$(tempfile)
+info-dialog $infofile &
+trap "rm -f -- '$infofile'" INT TERM EXIT
+
 # create seedless watch wallet (cold-online)
 if [ -e "$wallet_path" ] && [ ! -e "$storage_path/cold-online" ]; then
+    info "creating $storage_path/cold-online..."
     echo y | electrum deseed -w $wallet_path
     mv $wallet_path.seedless $storage_path/cold-online
 fi
 
 # umount encrypted storage
+info "syncing filesystem..."
 sync && sleep 2
+
+info "umounting encrypted storage..."
 while true; do
     if sudo luks-umount $mount_path; then
         break
