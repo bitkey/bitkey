@@ -43,6 +43,8 @@ if [[ "$#" != "1" ]]; then
     usage
 fi
 
+mount_path="/mnt/bluestone-data"
+
 mode=$1
 case "$mode" in
     cold-offline|cold-online|hot-online) ;;
@@ -59,8 +61,12 @@ if pidof -x electrum-wrapper -o %PPID >/dev/null; then
     fatal "electrum-wrapper is already running..."
 fi
 
+# verify mount_path isn't in use
+if mountpoint -q $mount_path; then
+    fatal "$mount_path is currently in use...\nTip: sudo luks-umount $mount_path"
+fi
+
 # locate and setup storage
-mount_path="/mnt/bluestone-data"
 storage_path=$(locate_storage_path bluestone-data $mode)
 storage_file=$storage_path/$mode
 
