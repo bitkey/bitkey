@@ -10,5 +10,13 @@
 
 firmware-linux-free
 firmware-linux-nonfree
+firmware-atheros
+firmware-bnx2
+firmware-bnx2x
+firmware-brcm80211
+firmware-ipw2x00
 firmware-iwlwifi
+firmware-libertas
+firmware-ralink
+firmware-realtek
 
