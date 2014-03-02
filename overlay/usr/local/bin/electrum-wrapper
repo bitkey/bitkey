@@ -43,6 +43,7 @@ if [[ "$#" != "1" ]]; then
     usage
 fi
 
+storage_dirname="bluestone-data"
 mount_path="/mnt/bluestone-data"
 
 mode=$1
@@ -67,7 +68,7 @@ if mountpoint -q $mount_path; then
 fi
 
 # locate and setup storage
-storage_path=$(locate_storage_path bluestone-data $mode)
+storage_path=$(locate_storage_path $storage_dirname $mode)
 storage_file=$storage_path/$mode
 
 if [ -z $storage_path ]; then
