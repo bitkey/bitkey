@@ -90,11 +90,8 @@ fi
 
 # plaintext seedless watch wallet (cold-online)
 if [ "$mode" == "cold-online" ]; then
-    if [ -e "$storage_file" ]; then
-        electrum --concealed --labels --wallet=$storage_file &
-        exit 0
-    fi
-    fatal "manual cold-online wallet creation is currently not supported."
+    ELECTRUM_WIZARD_ACTION=watching electrum --labels --wallet=$storage_file &
+    exit 0
 fi
 
 # create and or mount encrypted storage (cold-offline / hot-online)
