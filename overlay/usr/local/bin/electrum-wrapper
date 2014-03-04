@@ -131,7 +131,7 @@ electrum --concealed --labels $extra_args --wallet=$wallet_path
 
 # setup info dialog
 infofile=$(tempfile)
-info-dialog $infofile &
+info-dialog --title="electrum-wrapper" $infofile &
 trap "rm -f -- '$infofile'" INT TERM EXIT
 
 # create seedless watch wallet (cold-online)
