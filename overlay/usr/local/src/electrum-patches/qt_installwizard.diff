@@ -1,0 +1,51 @@
+--- installwizard.py.orig	2014-03-04 18:19:52.000000000 +0200
++++ installwizard.py	2014-03-04 18:19:52.000000000 +0200
+@@ -10,6 +10,7 @@
+ from util import *
+ from amountedit import AmountEdit
+ 
++import os
+ import sys
+ import threading
+ 
+@@ -54,12 +55,12 @@
+         b2 = QRadioButton(gb)
+         b2.setText(_("Restore an existing wallet from its seed"))
+ 
+-        b3 = QRadioButton(gb)
+-        b3.setText(_("Create a watching-only version of an existing wallet"))
++        #b3 = QRadioButton(gb)
++        #b3.setText(_("Create a watching-only version of an existing wallet"))
+ 
+         grid.addWidget(b1,1,0)
+         grid.addWidget(b2,2,0)
+-        grid.addWidget(b3,3,0)
++        #grid.addWidget(b3,3,0)
+ 
+         vbox = QVBoxLayout()
+         self.set_layout(vbox)
+@@ -76,7 +77,7 @@
+         elif b2.isChecked():
+             answer = 'restore'
+         else:
+-            answer = 'watching'
++            answer = ''
+ 
+         return answer
+ 
+@@ -253,10 +254,11 @@
+ 
+ 
+     def run(self):
+-
+-        action = self.restore_or_create()
+-        if not action: 
+-            return
++        action = os.environ.get('ELECTRUM_WIZARD_ACTION')
++        if not action in ('watching', 'create', 'restore'):
++            action = self.restore_or_create()
++            if not action: 
++                return
+ 
+         wallet = Wallet(self.storage)
+         gap = self.config.get('gap_limit', 5)
