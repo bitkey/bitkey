@@ -6,7 +6,12 @@
      "make_chrome_default": false,
      "make_chrome_default_for_user": false,
      "create_all_shortcuts": true,
-     "show_welcome_page": false
+     "show_welcome_page": false,
+     "suppress_first_run_bubble": true,
+     "suppress_first_run_default_browser_prompt": true
+  },
+  "sync_promo" : {
+     "show_on_first_run_allowed": false
   },
   "browser": {
      "show_home_button": true,
@@ -15,6 +20,7 @@
   "bookmark_bar": {
      "show_on_all_tabs": true
   },
-  "homepage": "http://www.debian.org"
+  "homepage": "https://start.bitkey.io",
+  "homepage_is_newtabpage" : false
 }
 
