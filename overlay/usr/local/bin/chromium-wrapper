@@ -1,0 +1,18 @@
+#!/bin/bash
+
+BOOKMARKS_SRC=https://start.bitkey.io/bookmarks
+BOOKMARKS_DST=/etc/chromium/initial_bookmarks.html
+BOOKMARKS_TMP=$(mktemp -u)
+
+rm -rf $HOME/.config/chromium
+rm -rf $HOME/.cache/chromium
+
+curl -L -f -m 5 $BOOKMARKS_SRC -o $BOOKMARKS_TMP || true
+if [ -e "$BOOKMARKS_TMP" ]; then
+    sudo mv $BOOKMARKS_TMP $BOOKMARKS_DST
+    sudo chown root:root $BOOKMARKS_DST
+    sudo chmod 644 $BOOKMARKS_DST
+fi
+
+chromium --incognito &
+
