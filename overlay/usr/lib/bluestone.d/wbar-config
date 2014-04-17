@@ -17,7 +17,7 @@ EOF
 if [ ! "$mode" = "cold-offline" ]; then
 cat >>$CONFIG<<EOF
 i: /usr/share/pixmaps/chromium.png
-c: chromium --incognito
+c: chromium-wrapper
 t: browser
 
 EOF
