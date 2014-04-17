@@ -1,11 +1,11 @@
 #!/bin/sh
 
 PREREQ=""
-DESCRIPTION="Setup system for bluestone selected boot option..."
+DESCRIPTION="Setup system for bitkey selected boot option..."
 
 for x in $(cat /proc/cmdline); do
     case $x in
-        bluestone=*) mode="${x#bluestone=}";;
+        bitkey=*) mode="${x#bitkey=}";;
     esac
 done
 
@@ -24,10 +24,10 @@ prereqs)
     ;;
 esac
 
-if [ -e /root/usr/lib/bluestone.d ]; then
+if [ -e /root/usr/lib/bitkey.d ]; then
     log_begin_msg "$DESCRIPTION"
     mount -t proc proc-chroot /root/proc
-    chroot /root sh -c "run-parts -a $mode /usr/lib/bluestone.d"
+    chroot /root sh -c "run-parts -a $mode /usr/lib/bitkey.d"
     umount /root/proc
     log_end_msg
 fi

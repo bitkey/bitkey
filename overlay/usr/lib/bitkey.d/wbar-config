@@ -45,7 +45,7 @@ c: thunar
 t: files
 
 i: /usr/share/icons/gnome/48x48/apps/help-browser.png
-c: chromium-offline-app file:///usr/local/share/doc/bluestone-help/index.html
+c: chromium-offline-app file:///usr/local/share/doc/bitkey-help/index.html
 t: help
 
 EOF

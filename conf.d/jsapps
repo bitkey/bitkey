@@ -8,7 +8,7 @@ rm $SRC/zxcvbn/libs.tar.gz
 tar -zxf $SRC/bitaddress.org.tar.gz -C $SRC
 rm $SRC/bitaddress.org.tar.gz
 
-HELP=/usr/local/share/doc/bluestone-help
+HELP=/usr/local/share/doc/bitkey-help
 tar -zxf $HELP/assets.tar.gz -C $HELP
 rm $HELP/assets.tar.gz
 

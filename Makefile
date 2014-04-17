@@ -6,7 +6,7 @@ define root.build/pre
 endef
 
 define root.patched/post
-	cp plan/net $O/root.patched/usr/lib/bluestone.d/purge-packages.list
+	cp plan/net $O/root.patched/usr/lib/bitkey.d/purge-packages.list
 endef
 
 include $(FAB_PATH)/common/mk/turnkey-desktop.mk
