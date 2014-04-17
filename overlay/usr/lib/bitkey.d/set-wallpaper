@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mode=$1
+ln -sf $mode.jpg /usr/local/share/backgrounds/default.jpg
+
