@@ -1,3 +1,4 @@
+NONFREE = yes
 COMMON_CONF = desktop
 COMMON_OVERLAYS = desktop
 
