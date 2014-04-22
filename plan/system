@@ -1,6 +1,8 @@
 inithooks
 python-dialog
 turnkey-pylib
+turnkey-version
+turnkey-sysinfo
 
 luks
 gnupg
