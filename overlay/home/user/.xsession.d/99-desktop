@@ -6,6 +6,10 @@ if which metacity >/dev/null; then
     metacity --composite &
 fi
 
+if which bitkey-welcome >/dev/null; then
+    bitkey-welcome &
+fi
+
 if which wbar >/dev/null; then
     sleep 2
     exec wbar

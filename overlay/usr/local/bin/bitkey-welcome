@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+for x in $(cat /proc/cmdline); do
+    case $x in
+        bitkey=*) MODE="${x#bitkey=}";;
+    esac
+done
+
+info-prompt \
+    --title "Welcome to BitKey - $MODE" \
+    --text "
+Getting started:
+
+1. Remove the BitKey (red) boot device
+
+2. Insert a USB drive (black) for data storage
+
+3. Click Electrum to create or open your wallet
+
+"
+
