@@ -44,10 +44,6 @@ i: /usr/share/icons/gnome/48x48/places/user-home.png
 c: thunar
 t: files
 
-i: /usr/share/icons/gnome/48x48/apps/help-browser.png
-c: chromium-offline-app file:///usr/local/share/doc/bitkey-help/index.html
-t: help
-
 EOF
 
 if [ ! "$mode" = "cold-offline" ]; then
