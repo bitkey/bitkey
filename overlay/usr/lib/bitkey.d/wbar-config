@@ -5,7 +5,7 @@ CONFIG=/home/user/.wbar
 
 cat >$CONFIG<<EOF
 i: /usr/share/wbar/iconpack/wbar.osx/osxbarback.png
-c: wbar -bpress -above-desk -pos center -zoomf 1.3 -isize 72 -idist 4 -jumpf 1 -nanim 3 -balfa 25
+c: wbar -bpress -pos center -zoomf 1.3 -isize 72 -idist 4 -jumpf 1 -nanim 3 -balfa 25
 t: /usr/share/fonts/truetype/ttf-dejavu/DejaVuSans-Bold.ttf/10
 
 i: /usr/local/share/icons/electrum.png
