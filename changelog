@@ -1,0 +1,48 @@
+turnkey-bitkey-13.0 (1) turnkey; urgency=low
+
+  * Initial public release of BitKey.
+
+  * Minimal desktop environment:
+
+    - Standalone window manager (metacity).
+    - Customized desktop keybindings for window manipulation (convenience).
+    - Custom packaged metacity theme (zukitwo).
+    - Cursor theme (dmz-white).
+    - Lightweight application launcher (wbar).
+    - Terminal emulator with customized keybindings (mrxvt).
+    - Network manager with default configured interfaces (wicd).
+    - Includes popular wifi modules out of the box.
+    - File manager for accessing file system / media devices (thunar).
+    - USB storage device auto-mounting support (convenience).
+
+  * Boot to desktop:
+
+    - Supports 3 boot modes: cold-offline, cold-online, hot-online.
+    - Networking components are purged in cold-offline mode (security).
+    - Application launchers customized depending on boot mode (UX).
+    - Preseeded inithooks for uninterrupted boot process (convenience).
+    - Different wallpapers depending on boot mode as a visual queue (UX).
+    - Getting started prompt (UX).
+
+  * Electrum:
+
+    - Custom patch for watch-only to support boot modes (UX).
+    - Custom developed electrum-wrapper (UX, security).
+    - Wrapper leverages LUKS encrypted loopback files for wallet storage (security).
+    - Custom developed passphrase dialog with zxcvbn integration (security).
+    - Watch-only seedless wallet automatically created (convenience).
+
+  * Chromium:
+
+    - Customized defaults for BitKey (homepage, bookmarks).
+    - Launcher defaults to incognito mode and deletes cache (privacy).
+    - Suppressed welcome page, bubbles, promo tab (UX).
+
+  * Bundled JS apps:
+
+    - Launched in chromium app mode with dummy proxy settings.
+    - BitAddress: Alternative to Electrum for wallet creation.
+    - ZXCVBN: Passphrase strength estimator.
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Wed, 23 Apr 2014 16:21:08 +0300
+
