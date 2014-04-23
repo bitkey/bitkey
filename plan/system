@@ -8,6 +8,7 @@ luks
 gnupg
 gnupg-agent
 pinentry-gtk2
+ca-certificates
 
 rsyslog
 iptables
