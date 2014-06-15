@@ -28,6 +28,10 @@ i: /usr/share/icons/gnome/48x48/apps/fonts.png
 c: chromium-offline-app file:///usr/local/src/bitaddress.org/bitaddress.org.html
 t: bitaddress
 
+i: /usr/local/share/icons/qrcode.png
+c: chromium-offline-app file:///usr/local/src/qrcode/index.html
+t: qrcode generator
+
 i: /usr/share/icons/gnome/48x48/status/stock_lock.png
 c: chromium-offline-app file:///usr/local/src/zxcvbn/index.html
 t: password strength
