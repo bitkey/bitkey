@@ -1,22 +1,22 @@
 #!/bin/bash -e
 
 SRC=/usr/local/src
+PATCHES=$SRC/electrum-patches
 
 # install electrum deps
 easy_install $SRC/ecdsa-*.tar.gz
 easy_install $SRC/slowaes-*.tar.gz
 rm $SRC/{ecdsa-*.tar.gz,slowaes-*.tar.gz}
 
-# install electrum
+# unpack electrum and apply patches
 tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
 rm $SRC/Electrum-*.tar.gz
+patch $SRC/Electrum-*/electrum_gui/qt/installwizard.py $PATCHES/qt_installwizard.diff
+rm -rf $PATCHES
+
+# install electrum
 cd $SRC/Electrum-*
 python setup.py install
 cd -
 rm -rf $SRC/Electrum-*
 
-# apply patches
-PATCHES=$SRC/electrum-patches
-ELECTRUM=/usr/local/lib/python2.7/dist-packages/Electrum-*
-patch $ELECTRUM/electrum_gui/qt/installwizard.py $PATCHES/qt_installwizard.diff
-rm -rf $PATCHES
