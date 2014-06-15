@@ -11,7 +11,7 @@ rm $SRC/{ecdsa-*.tar.gz,slowaes-*.tar.gz}
 # unpack electrum and apply patches
 tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
 rm $SRC/Electrum-*.tar.gz
-patch $SRC/Electrum-*/electrum_gui/qt/installwizard.py $PATCHES/qt_installwizard.diff
+patch $SRC/Electrum-*/gui/qt/installwizard.py $PATCHES/qt_installwizard.diff
 rm -rf $PATCHES
 
 # install electrum
