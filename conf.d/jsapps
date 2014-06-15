@@ -5,6 +5,9 @@ SRC=/usr/local/src
 tar -zxf $SRC/zxcvbn/libs.tar.gz -C $SRC/zxcvbn
 rm $SRC/zxcvbn/libs.tar.gz
 
+tar -zxf $SRC/qrcode/libs.tar.gz -C $SRC/qrcode
+rm $SRC/qrcode/libs.tar.gz
+
 tar -zxf $SRC/bitaddress.org.tar.gz -C $SRC
 rm $SRC/bitaddress.org.tar.gz
 
