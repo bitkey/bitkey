@@ -1,4 +1,19 @@
-turnkey-bitkey-13.0 (1) turnkey; urgency=low
+turnkey-bitkey-13.0.1 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian Wheezy 7.5
+
+  * Electrum:
+
+    - Upgraded to version 1.9.8 (#4)
+    - Bugfixed applying patch for watch-only to support boot modes (#3)
+
+  * Bundled JS apps:
+
+    - Added generic QR code generator (#2)
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 16 Jun 2014 13:58:34 +0300
+
+turnkey-bitkey-13.0.0 (1) turnkey; urgency=low
 
   * Initial public release of BitKey.
 
