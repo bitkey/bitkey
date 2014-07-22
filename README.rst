@@ -1,8 +1,15 @@
-Our vision for `BitKey`_ is a portable device that a computer can boot from,
-containing a read-only prefabricated independent operating system environment
-which is engineered from the ground up to prioritize security while maximizing
-usability. We're aiming to provide a safe, reliable and easy to use practical
-platform for high risk applications such as Bitcoin transactions.
+In its current form BitKey is a swiss army knife of handy Bitcoin tools
+built on top of Debian, which we created because we wanted something
+like it for our own use case.
+
+We're avid Bitcoin fans but after going to our first local Bitcoin
+meetup we discovered the elephant in the room was that there was no easy
+way to perform cold storage Bitcoin transactions where the wallet lives
+on an air-gapped system physically disconnected from the Internet.
+
+The idea was to see if we could use the TurnKey GNU/Linux build system
+to create a self-contained read-only CD/USB stick with everything you
+need to perform highly secure air-gapped Bitcoin transactions.
 
 Overview, features, download
 ----------------------------
@@ -12,8 +19,7 @@ See http://bitkey.io
 Building from source
 --------------------
 
-BitKey is built with `TKLDev`_, the TurnKey Linux open source build
-chain.
+BitKey is built with `TKLDev`_, the TurnKey GNU/Linux build system.
 
 Reporting a bug, issue or feature request
 -----------------------------------------
@@ -41,7 +47,7 @@ the issue.
 Contributing as a developer
 ---------------------------
 
-BitKey, like TurnKey, is 100% open source and the code for all
+BitKey, like TurnKey, is 100% free software and the code for all
 components is right here on GitHub.  Developers with good ideas are
 strongly encouraged to be bold and contribute code. Use the source Luke!
 
