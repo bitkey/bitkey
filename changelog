@@ -1,3 +1,9 @@
+turnkey-bitkey-14.0.0 (1) turnkey; urgency=low
+
+  * Updated to debian jessie
+
+ -- Yannick Heneault <yheneaul@gmail.com> Thu, 31 Mar 2016 12:00:00 +0000
+
 turnkey-bitkey-13.0.1 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Wheezy 7.5

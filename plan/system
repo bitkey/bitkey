@@ -21,7 +21,7 @@ procps
 whiptail
 localepurge
 lsb-release
-console-tools
+busybox
 console-setup
 bash-completion
 libperl4-corelibs-perl  /* lsof dep instead of old perl version */
