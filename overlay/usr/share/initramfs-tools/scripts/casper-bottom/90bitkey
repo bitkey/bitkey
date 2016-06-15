@@ -9,8 +9,6 @@ for x in $(cat /proc/cmdline); do
     esac
 done
 
-. /scripts/casper-functions
-
 prereqs()
 {
     echo "$PREREQ"
@@ -23,6 +21,8 @@ prereqs)
     exit 0
     ;;
 esac
+
+. /scripts/casper-functions
 
 if [ -e /root/usr/lib/bitkey.d ]; then
     log_begin_msg "$DESCRIPTION"
