@@ -24,6 +24,10 @@ EOF
 fi
 
 cat >>$CONFIG<<EOF
+i: /usr/local/src/warpwallet/icon.png
+c: chromium-offline-app file:///usr/local/src/warpwallet/index.html
+t: warpwallet
+
 i: /usr/share/icons/gnome/48x48/apps/fonts.png
 c: chromium-offline-app file:///usr/local/src/bitaddress.org/bitaddress.org.html
 t: bitaddress
