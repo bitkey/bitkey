@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+url=$1
+chromium --incognito --app="$url" &
+

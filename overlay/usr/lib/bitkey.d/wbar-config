@@ -40,6 +40,10 @@ i: /usr/share/icons/gnome/48x48/status/stock_lock.png
 c: chromium-offline-app file:///usr/local/src/zxcvbn/index.html
 t: password strength
 
+i: /usr/local/src/coinbin/icon.png
+c: chromium-online-app file:///usr/local/src/coinbin/index.html
+t: coinbin
+
 i: /usr/share/icons/gnome/48x48/apps/terminal.png
 c: mrxvt
 t: terminal

@@ -19,3 +19,10 @@ rm $HELP/assets.tar.gz
 cd $SRC/warpwallet
 ln -sf warp_*.html index.html
 
+cd $SRC
+unzip coinbin-*.zip
+rm coinbin-*.zip
+mv coinbin-*/ coinbin/
+mv coinbin.png coinbin/icon.png
+
+
