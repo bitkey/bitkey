@@ -14,3 +14,4 @@ patch                   /* electrum: apply patches */
 
 p7zip-full              /* as per feature request #11 */
 
+secure-delete
