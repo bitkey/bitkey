@@ -1,0 +1,15 @@
+- Deterministic builds 
+
+  Improve TurnKey's build chain  to support Gitian-style deterministic
+  builds, to make it harder to compromise the build process, allow the
+  community to independently verify full system integrity bit-for-bit,
+  and create a community based signed chain of trust for each released
+  version.  
+
+- More multi layered security for increased attack resistance in online mode:
+
+  Implementing exotic security mechansims such as mandatory access
+  control (MAC), PAX, trusted path execution (TPE), position independent
+  code address space layout randomization (PIE-ASLR), discretionary
+  access control (DAC), jails, exploit countermeasures (ECM) and raw
+  IO/Memory protections. 
