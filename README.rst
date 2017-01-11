@@ -64,14 +64,21 @@ High security - Cold storage boot modes
 Two cold storage modes:
 
 1) cold-offline: create wallet, sign transactions
+
+   In this mode, the desktop background is green (mnemonic for safe)
+
 2) cold-online: watch wallet, prepare transactions
+
+   In this mode, the desktop background is blue (mnemonic for informative)
 
 If the instructions are carefully followed, cold storage modes creates
 an airgap which ensures that your wallet's private keys are never known
 to any computer connected to the Internet.
 
-Medium security - Hot-online boot mode
---------------------------------------
+Medium security - Hot-online boot mode (red background)
+-------------------------------------------------------
+
+In this mode the desktop background is red (mnemonic for danger)
 
 Allows you to create & watch wallet, prepare & sign transactions.
 
@@ -203,6 +210,12 @@ Guidelines:
   verifying against mistakes.
 
 Specifics:
+
+- Change desktop background color to indicate boot mode
+
+  cold-offline: green background
+  cold-online: blue background
+  hot-online: red background
 
 - Disabled networking in cold-offline mode: all plan/net network packages are purged on
   boot by /usr/lib/bitkey.d/purge-packages script
