@@ -26,7 +26,9 @@ Apps that are allowed network access in online mode:
 
 Apps that are not allowed network access even in online mode:
 
-- warpwallet: scrypt+pbkdf2 secure brainwallet
+- warpwallet: secure brainwallet (scrypt+pbkdf2)
+
+  How Jason Bourne stores his Bitcoin:
 
   http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/ 
 
@@ -100,6 +102,75 @@ You rely on the magical power of wishful thinking. You're not important
 enough to get hacked and any opportunistic malware infection you do get
 is not going to include any Bitcoin stealing functionailty. Right?
 Right! Good luck!
+
+Paranoid brainwallet support - Jason Bourne mode
+================================================
+
+Hardest to use but leaves no trace of wallet keys in any storage medium.
+Minimizes trust in BitKey. Your wallet keys are only stored in your head.
+
+Generating wallet step
+----------------------
+
+1) Boot BitKey in cold-offline mode, remove BitKey USB
+2) Use Warpwallet to create a secure brainwallet
+3) Save public Bitcoin address (e.g., scan qrcode)
+4) To ensure private keys do not survive in RAM, turn off computer
+   running BitKey and disconnect power source for 15 minutes. 
+
+After generating wallet, you can send Bitcoin to this address.
+
+Generating unsigned transaction step
+------------------------------------
+
+This step is easiest to do from an Electrum watch-wallet on a PC, but
+you can also do it from BitKey:
+
+1) Boot BitKey in cold-online mode, remove BitKey USB
+2) Restore watch-only wallet and run Electrum, from command line::
+
+    $ electrum restore $PUBLIC_ADDRESS
+    $ electrum
+
+3) Insert USB stick for storing unsigned transaction
+4) Fill in recipient under Send tab and "Save" unsigned
+   transaction to USB at /media/usb/
+5) Shutdown/Reboot BitKey
+
+Signing transaction step
+------------------------
+
+1) Boot BitKey in cold-offline mode, remove BitKey USB
+2) Insert USB stick where you stored unsigned transaction. Copy to RAM
+   and remove from disk::
+
+    $ cp /media/usb/unsigned.txt ~/     #  uses RAM for storage
+    $ srm /media/usb/unsigned.txt       # secure delete unsigned transaction
+
+3) Unplug USB stick
+4) Use Warpwallet to restore brainwallet private key
+5) Launch Electrum from command line so that it stores wallet in RAM::
+
+    $ electrum -w /tmp/brainwallet
+
+6) Import private key and sign transaction
+
+   - In the Electrum Install Wizard, select 'Restore a wallet or import keys'
+   - Cut and paste the private key, click Next
+   - Click Next again (you don't need encryption for a wallet in RAM)
+   - Tools > Load transaction > From file
+   - Verify Outputs, Sign & Save signed transaction
+
+7) Create a QRCode for the signed transaction:
+
+   - Open Signed transaction in text editor
+   - Open qrcode app: cut and paste hex of signed transaction
+
+8) Scan qrcode of signed transaction with phone and broadcast
+   transaction to network.
+
+9) Turn off BitKey, disconnect power source, wait 15 minutes to clear
+   RAM
 
 Security model
 ==============
