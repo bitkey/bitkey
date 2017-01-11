@@ -10,8 +10,8 @@ way to perform cold storage Bitcoin transactions where the wallet lives
 on an air-gapped system physically disconnected from the Internet.
 
 We used the TurnKey GNU/Linux build system to create a self-contained
-read-only CD/USB stick with everything you need to perform any type of
-Bitcoin transaction transaction.
+read-only CD/USB stick to satisfy all our Bitcoin needs. Your's too we
+hope, and if not we're open to suggestions for improvement.
 
 Apps: batteries included!
 =========================
