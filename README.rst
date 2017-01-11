@@ -65,20 +65,20 @@ Two cold storage modes:
 
 1) cold-offline: create wallet, sign transactions
 
-   In this mode, the desktop background is green (mnemonic for safe)
+   In this mode, the desktop background is green (mnemonic for cool and safe)
 
 2) cold-online: watch wallet, prepare transactions
 
-   In this mode, the desktop background is blue (mnemonic for informative)
+   In this mode, the desktop background is blue (mnemonic for cool and informative)
 
 If the instructions are carefully followed, cold storage modes creates
-an airgap which ensures that your wallet's private keys are never known
-to any computer connected to the Internet.
+an airgap which ensures that your wallet's private keys are never loaded
+into RAM on a computer connected to the Internet.
 
 Medium security - Hot-online boot mode (red background)
 -------------------------------------------------------
 
-In this mode the desktop background is red (mnemonic for danger)
+In this mode the desktop background is red (mnemonic for hot and dangerous)
 
 Allows you to create & watch wallet, prepare & sign transactions.
 
