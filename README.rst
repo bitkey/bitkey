@@ -71,6 +71,27 @@ after booting you no longer need the USB.
     sdf                                8:80   1   7.4G  1 disk  
     └─sdf1                             8:81   1   444M  1 part 
 
+Formatting your data storage flash drive
+----------------------------------------
+
+By default, BitKey stores your wallet encrypted on a USB flash drive AKA
+USB stick.
+
+It expects your flash drive to be vfat formatted. This is the standard
+format for store bought drives. If this isn't the case, BitKey may have
+trouble detecting your drive. In that case you can reformat the drive
+from Windows, or on Linux / BitKey using the following steps:
+
+1) Insert data storage flash drive and detect the device path::
+
+    $ dmesg|grep Attached | tail --lines=1
+    [583494.891574] sd 19:0:0:0: [sda] Attached SCSI removable disk
+
+2) Reformat the drive::
+
+    $ sudo mkfs.vfat /dev/sda1
+    mkfs.fat 3.0.27 (2014-11-12)
+
 Usage modes
 ===========
 

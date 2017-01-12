@@ -27,3 +27,4 @@ bash-completion
 libperl4-corelibs-perl  /* lsof dep instead of old perl version */
 lsof
 
+dosfstools              /* needed for mkfs.vfat */
