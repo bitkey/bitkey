@@ -45,6 +45,32 @@ Other:
 - Text editor
 - File manager
 
+Installing BitKey on a USB stick or CDROM
+=========================================
+
+BitKey on CDROM: your use favorite program to burn the ISO to CDROM.
+Nothing special. CDROMs are naturally read-only and tamper resistant.
+
+BitKey on USB: If you don't burn BitKey to a CDROM, writing BitKey to a
+USB stick with a hardware read-write toggle (e.g., Kanguru FlashBlu) is
+the next best thing.
+
+On USB sticks without write protection, you can remove BitKey USB after
+booting as an additional security measure. BitKey loads into RAM so
+after booting you no longer need the USB.
+
+1) Insert USB stick and detect the device path::
+
+    $ dmesg|grep Attached | tail --lines=1
+    [583494.891574] sd 19:0:0:0: [sdf] Attached SCSI removable disk
+
+2) Write ISO to USB::
+
+    $ sudo dd if=path/to/bitkey.iso of=/dev/sdf
+    $ lsblk | grep sdf
+    sdf                                8:80   1   7.4G  1 disk  
+    └─sdf1                             8:81   1   444M  1 part 
+
 Usage modes
 ===========
 
@@ -289,7 +315,7 @@ Specifics:
 
     In hot-online mode: separate wallet file, so that even if you store
     the wallets on the same USB key, you can't accidentally open the
-    cold-offline wallet by booting into the wron boot.
+    cold-offline wallet by booting into the wrong mode.
 
 - Disabled networking in cold-offline mode: all plan/net network
   packages are purged on boot by /usr/lib/bitkey.d/purge-packages script
@@ -312,8 +338,9 @@ Specifics:
   - verify authenticity of PGP keys when possible (e.g., using keybase)
   - generate and inspect diff from tagged releases
 
-- vouch for source components by signing list of signatures
-  /usr/local/src SHA256SUM
+- vouch for source components by signing list of signatures::
+
+      gpg --verify /usr/local/src/SHA256SUM.asc
 
 How to build from source
 ========================
