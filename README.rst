@@ -179,6 +179,64 @@ Signing transaction step
 9) Turn off BitKey, disconnect power source, wait 15 minutes to clear
    RAM
 
+Desktop usage tips (Keyboard and mouse shortcuts)
+=================================================
+
+Full custom keybindings in overlay/usr/share/glib-2.0/schemas/20_custom.gschema.override
+
+Copy, Cut and Paste
+-------------------
+
+- Keyboard: Ctrl+C, CTRL+X and CTRL-V
+- Mouse: 
+    
+  To copy, click text and drag to highlight text to be copied
+
+  To paste, left click to focus keyboard, then middle mouse click to
+  paste. If no middle mouse button exists, clicking both right and
+  left buttons simultaneously also works.
+    
+Window management
+-----------------
+
+- Window operations: 
+  
+  Right-click titlebar 
+  ALT+F3
+
+- Split screen window positioning:
+  
+  Dragging window to left or right
+
+  This makes a window neatly fill half the screen
+
+- Maximize window by dragging to top of screen 
+
+- Toggle window maximization:
+
+  - double click on window titlebar
+  - ALT+F10
+
+- Minimize window: ALT+F9
+
+- Resize window: Alt+F8
+
+- Close window with CTRL+W or ALT-F4
+
+- Switch between windows (including minimized): Alt+TAB
+
+Workspaces
+----------
+
+- Switch workspaces: 
+  
+  <Win> F1-F4
+  <Ctrl> <Alt> Left/Right
+
+- Move window to a different workspace: <Win> <Shift> F1-F4
+
+
+
 Security model
 ==============
 
