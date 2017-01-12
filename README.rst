@@ -27,11 +27,6 @@ Apps that are allowed network access in online mode:
 Apps that are not allowed network access even in online mode:
 
 - warpwallet: secure brainwallet (scrypt+pbkdf2)
-
-  How Jason Bourne stores his Bitcoin:
-
-  http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/ 
-
 - bitaddress: paper wallet generator
 - qrcode generator: encodes anything as a qrcode
 - zxcvbn: realistic password strength estimator
@@ -115,6 +110,10 @@ Paranoid brainwallet support - Jason Bourne mode
 
 Hardest to use but leaves no trace of wallet keys in any storage medium.
 Minimizes trust in BitKey. Your wallet keys are only stored in your head.
+
+Inspired by how Jason Bourne stores his Bitcoin:
+
+http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/ 
 
 Generating wallet step
 ----------------------
@@ -201,8 +200,8 @@ Window management
 
 - Window operations: 
   
-  Right-click titlebar 
-  ALT+F3
+  - Right-click titlebar 
+  - ALT+F3
 
 - Split screen window positioning:
   
@@ -230,8 +229,8 @@ Workspaces
 
 - Switch workspaces: 
   
-  <Win> F1-F4
-  <Ctrl> <Alt> Left/Right
+  - <Win> F1-F4
+  - <Ctrl> <Alt> Left/Right
 
 - Move window to a different workspace: <Win> <Shift> F1-F4
 
@@ -271,12 +270,29 @@ Specifics:
 
 - Change desktop background color to indicate boot mode
 
-  cold-offline: green background
-  cold-online: blue background
-  hot-online: red background
+  - cold-offline: green background
+  - cold-online: blue background
+  - hot-online: red background
 
-- Disabled networking in cold-offline mode: all plan/net network packages are purged on
-  boot by /usr/lib/bitkey.d/purge-packages script
+- Electrum wrapper:
+  
+  - automatically configures default wallet based on boot mode
+
+    In cold-offline mode: wallet is stored in an encrypted LUKS, with
+    enforced passphrase complexity. Following offline wallet generation
+    a watch only wallet is created containing only public keys.
+
+    In cold-online mode: only the watch wallet is accessible, the wallet
+    containing private keys is inaccessible so that the user is never
+    accidentally prompted for the passphrase and can't open the wallet
+    online by mistake. 
+
+    In hot-online mode: separate wallet file, so that even if you store
+    the wallets on the same USB key, you can't accidentally open the
+    cold-offline wallet by booting into the wron boot.
+
+- Disabled networking in cold-offline mode: all plan/net network
+  packages are purged on boot by /usr/lib/bitkey.d/purge-packages script
 
 - Deny network access to local webapps (e.g., warpwallet, qrcode
   generator) that don't need it.
