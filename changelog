@@ -1,3 +1,13 @@
+turnkey-bitkey-14.1.0 (1) turnkey; urgency=low
+
+  * Manually verified & signed integrity of upstream components
+  * New Bitcoin apps: warpwallet, coinbin & libbitcoin-explorer (bx)
+  * New packages: secure-delete, dosfstools (mkfs.vfat)
+  * Added background color labels to boot modes
+  * Desktop UX: cut and paste, improved keybindings
+
+ -- Liraz Siri <liraz@turnkeylinux.org> Tue, 17 Jan 2017 12:00:00 +0000
+
 turnkey-bitkey-14.0.0 (1) turnkey; urgency=low
 
   * Updated to debian jessie
