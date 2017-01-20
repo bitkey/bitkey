@@ -48,7 +48,7 @@ Other:
 Installing BitKey on a USB stick or CDROM
 =========================================
 
-BitKey on CDROM: your use favorite program to burn the ISO to CDROM.
+BitKey on CDROM: use your favorite program to burn the ISO to CDROM.
 Nothing special. CDROMs are naturally read-only and tamper resistant.
 
 BitKey on USB: If you don't burn BitKey to a CDROM, writing BitKey to a
