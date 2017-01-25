@@ -26,7 +26,7 @@ Apps that are allowed network access in online mode:
 
 Apps that are not allowed network access even in online mode:
 
-- warpwallet: secure brainwallet (scrypt+pbkdf2)
+- warpwallet: brainwallet with strong KDF (scrypt+pbkdf2) and salt
 - bitaddress: paper wallet generator
 - qrcode generator: encodes anything as a qrcode
 - zxcvbn: realistic password strength estimator
@@ -166,12 +166,45 @@ Generating wallet step
 ----------------------
 
 1) Boot BitKey in cold-offline mode, remove BitKey USB
-2) Use Warpwallet to create a secure brainwallet
+2) Generate Warpwallet with a strong passphrase and your e-mail as salt
 3) Save public Bitcoin address (e.g., scan qrcode)
 4) To ensure private keys do not survive in RAM, turn off computer
    running BitKey and disconnect power source for 15 minutes. 
 
 After generating wallet, you can send Bitcoin to this address.
+
+Safety warning regarding salts: do not use Warpwallet without a salt.
+You're not going to forget your e-mail and using a salt makes attacks
+vastly more difficult.
+
+Public Service Announcement regarding Warpwallet passphrases: 
+
+1) Humans are poor sources of randomness and much more predictable using
+   statistical models than they think. Technology is ever moving forward
+   and cracking techniques always get better, never worse. You may not
+   be familiar with the state of the art, so be extra careful.
+   
+   The ideal passphrase is 6 to 8 truly random diceware words. If you're
+   going to try and come up with a random passphrase yourself, be
+   paranoid. They really are out to get you. At least use zxcvbn to
+   measure passphrase strength. It's not perfect, but it should give you
+   a clue. You'll want at least 65 bits of entropy for a salted
+   warpwallet, especially if you are going to be storing funds
+   long-term.
+
+   DO NOT USE KNOWN PHRASES, QUOTES OR SENTENCES FROM A BOOK.
+
+2) More wallets are lost to routine forgetfulness than sophisticated
+   theft. If you're not continually accessing your Warpwallet there is a
+   very high likelyhood you will eventually forget your passphrase after
+   a few months or a few years. You only need to forget a single
+   character for your wallet to be lost forever. This risk needs to be
+   balanced with the risks of making a paper backup.
+
+   Consider making a paper backup of your passphrase and destroying it
+   only when you are absolutely sure you will not forget it, then use
+   spaced reptition learning to ensure it stays in memory until you want
+   to access the funds. 
 
 Generating unsigned transaction step
 ------------------------------------
