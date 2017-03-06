@@ -9,6 +9,9 @@ update-desktop-database
 # set ownership on user's home
 chown -R user:user /home/user
 
+#set user as cups admin
+sudo usermod -aG lpadmin user
+
 # set ownership of automounted usb devices
 CONF=/etc/usbmount/usbmount.conf
 MOUNTOPTIONS="uid=user,gid=user,sync,noexec,nodev,noatime,nodiratime"
