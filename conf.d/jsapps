@@ -12,6 +12,11 @@ unzip $SRC/bitaddress.org*.zip -d $SRC
 rm $SRC/bitaddress.org*.zip
 mv $SRC/bitaddress.org* $SRC/bitaddress.org
 
+unzip $SRC/bitcoinpaperwallet-master.zip -d $SRC
+rm $SRC/bitcoinpaperwallet-master.zip
+mv $SRC/bitcoinpaperwallet-master $SRC/bitcoinpaperwallet
+mv $SRC/paper-wallet.png $SRC/bitcoinpaperwallet
+
 HELP=/usr/local/share/doc/bitkey-help
 tar -zxf $HELP/assets.tar.gz -C $HELP
 rm $HELP/assets.tar.gz

@@ -32,6 +32,10 @@ i: /usr/share/icons/gnome/48x48/apps/fonts.png
 c: chromium-offline-app file:///usr/local/src/bitaddress.org/bitaddress.org.html
 t: bitaddress
 
+i: /usr/local/src/bitcoinpaperwallet/paper-wallet.png
+c: chromium-offline-app file:///usr/local/src/bitcoinpaperwallet/generate-wallet.html
+t: bitpaper
+
 i: /usr/local/share/icons/qrcode.png
 c: chromium-offline-app file:///usr/local/src/qrcode/index.html
 t: qrcode generator
@@ -55,6 +59,10 @@ t: editor
 i: /usr/share/icons/gnome/48x48/apps/file-manager.png
 c: thunar /media
 t: file manager
+
+i: /usr/share/icons/gnome/48x48/devices/printer.png
+c: /usr/bin/system-config-printer
+t: printer
 
 EOF
 
