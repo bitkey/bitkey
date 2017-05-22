@@ -28,6 +28,7 @@ Apps that are not allowed network access even in online mode:
 
 - warpwallet: brainwallet with strong KDF (scrypt+pbkdf2) and salt
 - bitaddress: paper wallet generator
+- bitcoinpaperwallet: paper wallet generator
 - qrcode generator: encodes anything as a qrcode
 - zxcvbn: realistic password strength estimator
 
