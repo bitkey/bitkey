@@ -41,9 +41,9 @@ Other:
   visible in online mode)
 
 - Network manager
-
-- Text editor
+- Printer manager
 - File manager
+- Text editor
 
 Installing BitKey on a USB stick or CDROM
 =========================================

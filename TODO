@@ -1,12 +1,3 @@
-- Printer support
-  
-  For printing paper wallets. Need to look into how other live
-  distributions handle automatically setting up the printer 
-
-  Knoppix claims to have built-in support for hundreds of printers:
-
-  https://en.wikibooks.org/wiki/Knowing_Knoppix/Peripheral_devices
-
 - Deterministic builds 
 
   Improve TurnKey's build chain  to support Gitian-style deterministic
