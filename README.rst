@@ -443,8 +443,8 @@ strongly encouraged to be bold and contribute code. Use the source Luke!
 
 See the `guidelines and walk through`_.
 
-.. _BitKey: http://bitkey.io
-.. _TKLDev: http://www.turnkeylinux.org/tkldev
+.. _BitKey: https://bitkey.io
+.. _TKLDev: https://www.turnkeylinux.org/tkldev
 .. _Issue Tracker: https://github.com/bitkey/bitkey/issues/
 .. _guidelines and walk through: https://github.com/turnkeylinux/tracker/blob/master/GITFLOW.rst
 
