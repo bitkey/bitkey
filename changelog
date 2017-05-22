@@ -1,3 +1,12 @@
+turnkey-bitkey-14.2.0 (1) turnkey; urgency=low
+
+  * Upgraded base distribution to Debian Jessie 8.8
+  * New Bitcoin app: Bitcoin Paper wallet (thanks to Yannick Heneault)
+  * Added printer support (thanks to Yannick Heneault)
+  * Added on-screen keyboard (florence)
+
+ -- Alon Swartz <alon@turnkeylinux.org>  Mon, 22 May 2017 14:44:01 +0300
+
 turnkey-bitkey-14.1.0 (1) turnkey; urgency=low
 
   * Manually verified & signed integrity of upstream components
