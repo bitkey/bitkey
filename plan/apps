@@ -15,3 +15,6 @@ patch                   /* electrum: apply patches */
 p7zip-full              /* as per feature request #11 */
 
 secure-delete
+
+florence                /* onscreen keyboard */
+at-spi2-core            /* required for florence */
