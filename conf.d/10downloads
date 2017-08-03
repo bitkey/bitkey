@@ -1,0 +1,15 @@
+#!/bin/bash -e
+
+dl() {
+    [ "$FAB_HTTP_PROXY" ] && PROXY="--proxy $FAB_HTTP_PROXY"
+    cd $2 && curl -L -f -J -O $PROXY $1 && cd -
+}
+
+
+SRC="/usr/local/src"
+
+dl https://github.com/dashpay/paper.dash.org/archive/v3.1.0-dash.zip $SRC
+dl https://github.com/litecoin-project/liteaddress.org/archive/f31e0d78144d13e2f67142b8b3a67c69c0b2150b.zip $SRC
+
+cd $SRC && { sha256sum -c SHA256SUM > /dev/null; } && cd -
+

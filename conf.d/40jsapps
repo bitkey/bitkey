@@ -30,4 +30,17 @@ rm coinbin-*.zip
 mv coinbin-*/ coinbin/
 mv coinbin.png coinbin/icon.png
 
+###
+# Paper wallet generators for alt coins
+
+# officials
+unzip $SRC/paper.dash.org*.zip -d $SRC
+rm $SRC/paper.dash.org*.zip
+mv $SRC/paper.dash.org* $SRC/paper.dash.org
+find $SRC/paper.dash.org  -mindepth 1 -a \( -type d -o ! -name 'paper.dash.org.html' \)  -exec rm -rf {} +
+
+unzip $SRC/liteaddress.org*.zip -d $SRC
+rm $SRC/liteaddress.org*.zip
+mv $SRC/liteaddress.org* $SRC/liteaddress.org
+find $SRC/liteaddress.org  -mindepth 1 -a \( -type d -o ! -name 'index.html' \)  -exec rm -rf {} +
 
