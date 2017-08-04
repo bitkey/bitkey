@@ -1,3 +1,9 @@
+turnkey-bitkey-14.2.1 (1) turnkey; urgency=low
+
+  * New JS apps: paper wallets for dash, ether, monero and ripple
+
+ -- Daniel Henrique Alves Lima <daniel@danielhalima.com>  Thu, 03 Aug 2017 12:00:00 +0000
+
 turnkey-bitkey-14.2.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Jessie 8.8

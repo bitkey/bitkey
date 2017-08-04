@@ -1,0 +1,69 @@
+#!/bin/bash -e
+
+SRC=/usr/local/src
+
+tar -zxf $SRC/zxcvbn/libs.tar.gz -C $SRC/zxcvbn
+rm $SRC/zxcvbn/libs.tar.gz
+
+tar -zxf $SRC/qrcode/libs.tar.gz -C $SRC/qrcode
+rm $SRC/qrcode/libs.tar.gz
+
+unzip $SRC/bitaddress.org*.zip -d $SRC
+rm $SRC/bitaddress.org*.zip
+mv $SRC/bitaddress.org* $SRC/bitaddress.org
+
+unzip $SRC/bitcoinpaperwallet-master.zip -d $SRC
+rm $SRC/bitcoinpaperwallet-master.zip
+mv $SRC/bitcoinpaperwallet-master $SRC/bitcoinpaperwallet
+mv $SRC/paper-wallet.png $SRC/bitcoinpaperwallet
+
+HELP=/usr/local/share/doc/bitkey-help
+tar -zxf $HELP/assets.tar.gz -C $HELP
+rm $HELP/assets.tar.gz
+
+cd $SRC/warpwallet
+ln -sf warp_*.html index.html
+
+cd $SRC
+unzip coinbin-*.zip
+rm coinbin-*.zip
+mv coinbin-*/ coinbin/
+mv coinbin.png coinbin/icon.png
+
+###
+# Paper wallet generators for alt coins
+
+# officials
+unzip $SRC/paper.dash.org*.zip -d $SRC
+rm $SRC/paper.dash.org*.zip
+mv $SRC/paper.dash.org* $SRC/paper.dash.org
+find $SRC/paper.dash.org  -mindepth 1 -a \( -type d -o ! -name 'paper.dash.org.html' \)  -exec rm -rf {} +
+mv $SRC/dash-address.png $SRC/paper.dash.org/address.png
+mv $SRC/dash-paper.png $SRC/paper.dash.org/paper-wallet.png
+
+unzip $SRC/liteaddress.org*.zip -d $SRC
+rm $SRC/liteaddress.org*.zip
+mv $SRC/liteaddress.org* $SRC/liteaddress.org
+find $SRC/liteaddress.org  -mindepth 1 -a \( -type d -o ! -name 'index.html' \)  -exec rm -rf {} +
+mv $SRC/litecoin-address.png $SRC/liteaddress.org/address.png
+mv $SRC/litecoin-paper.png $SRC/liteaddress.org/paper-wallet.png
+
+# non-officials
+unzip $SRC/etherwallet-*.zip -d $SRC
+rm $SRC/etherwallet-*.zip
+mv $SRC/etherwallet-* $SRC/etherwallet
+mv $SRC/ethereum-address.png $SRC/etherwallet/address.png
+mv $SRC/ethereum-paper.png $SRC/etherwallet/paper-wallet.png
+
+unzip $SRC/monero-wallet-generator-*.zip -d $SRC
+rm $SRC/monero-wallet-generator-*.zip
+mv $SRC/monero-wallet-generator-* $SRC/monero-wallet-generator
+find $SRC/monero-wallet-generator  -mindepth 1 -a \( -type d -o ! -name 'monero-wallet-generator.html' \)  -exec rm -rf {} +
+mv $SRC/monero-address.png $SRC/monero-wallet-generator/address.png
+mv $SRC/monero-paper.png $SRC/monero-wallet-generator/paper-wallet.png
+
+unzip $SRC/generateSecretOffline-*.zip -d $SRC
+rm $SRC/generateSecretOffline-*.zip
+mv $SRC/generateSecretOffline-* $SRC/ripple-generateSecretOffline
+mv $SRC/ripple-address.png $SRC/ripple-generateSecretOffline/address.png
+mv $SRC/ripple-paper.png $SRC/ripple-generateSecretOffline/paper-wallet.png
