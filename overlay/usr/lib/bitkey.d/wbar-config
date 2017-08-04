@@ -52,9 +52,21 @@ i: /usr/local/src/paper.dash.org/address.png
 c: chromium-offline-app file:///usr/local/src/paper.dash.org/paper.dash.org.html
 t: dashpaper
 
+i: /usr/local/src/etherwallet/paper-wallet.png
+c: chromium-offline-app file:///usr/local/src/etherwallet/index.html
+t: etherwallet
+
 i: /usr/local/src/liteaddress.org/address.png
 c: chromium-offline-app file:///usr/local/src/liteaddress.org/index.html
 t: liteaddress
+
+i: /usr/local/src/monero-wallet-generator/paper-wallet.png
+c: chromium-offline-app file:///usr/local/src/monero-wallet-generator/monero-wallet-generator.html
+t: monerowallet
+
+i: /usr/local/src/ripple-generateSecretOffline/address.png
+c: chromium-offline-app file:///usr/local/src/ripple-generateSecretOffline/offline.html
+t: ripplegensecret
 
 i: /usr/share/icons/gnome/48x48/apps/terminal.png
 c: mrxvt

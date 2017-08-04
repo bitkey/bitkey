@@ -52,18 +52,18 @@ mv $SRC/litecoin-paper.png $SRC/liteaddress.org/paper-wallet.png
 unzip $SRC/etherwallet-*.zip -d $SRC
 rm $SRC/etherwallet-*.zip
 mv $SRC/etherwallet-* $SRC/etherwallet
-#mv $SRC/ethereum-address.png $SRC/etherwallet/address.png
-#mv $SRC/ethereum-paper.png $SRC/etherwallet/paper-wallet.png
+mv $SRC/ethereum-address.png $SRC/etherwallet/address.png
+mv $SRC/ethereum-paper.png $SRC/etherwallet/paper-wallet.png
 
 unzip $SRC/monero-wallet-generator-*.zip -d $SRC
 rm $SRC/monero-wallet-generator-*.zip
 mv $SRC/monero-wallet-generator-* $SRC/monero-wallet-generator
 find $SRC/monero-wallet-generator  -mindepth 1 -a \( -type d -o ! -name 'monero-wallet-generator.html' \)  -exec rm -rf {} +
-#mv $SRC/monero-address.png $SRC/monero-wallet-generator/address.png
-#mv $SRC/monero-paper.png $SRC/monero-wallet-generator/paper-wallet.png
+mv $SRC/monero-address.png $SRC/monero-wallet-generator/address.png
+mv $SRC/monero-paper.png $SRC/monero-wallet-generator/paper-wallet.png
 
 unzip $SRC/generateSecretOffline-*.zip -d $SRC
 rm $SRC/generateSecretOffline-*.zip
 mv $SRC/generateSecretOffline-* $SRC/ripple-generateSecretOffline
-#mv $SRC/ethereum-address.png $SRC/ripple-generateSecretOffline/address.png
-#mv $SRC/ethereum-paper.png $SRC/ripple-generateSecretOffline/paper-wallet.png
+mv $SRC/ripple-address.png $SRC/ripple-generateSecretOffline/address.png
+mv $SRC/ripple-paper.png $SRC/ripple-generateSecretOffline/paper-wallet.png
