@@ -9,7 +9,10 @@ dl() {
 SRC="/usr/local/src"
 
 dl https://github.com/dashpay/paper.dash.org/archive/v3.1.0-dash.zip $SRC
+dl https://github.com/kvhnuke/etherwallet/releases/download/v3.10.0.2/etherwallet-v3.10.0.2.zip $SRC
 dl https://github.com/litecoin-project/liteaddress.org/archive/f31e0d78144d13e2f67142b8b3a67c69c0b2150b.zip $SRC
+dl https://github.com/moneromooo-monero/monero-wallet-generator/archive/c04a4e872bd586ad0d6c1b3d1aa2d9822c1c29f9.zip $SRC
+dl https://github.com/whotooktwarden/generateSecretOffline/archive/1.zip $SRC
 
 cd $SRC && { sha256sum -c SHA256SUM > /dev/null; } && cd -
 
