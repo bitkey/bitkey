@@ -1,3 +1,7 @@
+turnkey-bitkey-14.2.1 (1) turnkey; urgency=low
+  * Updated Electrum to 2.9.0
+  * New Bitcoin apps: ssss-split/ssss-merge
+
 turnkey-bitkey-14.2.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Jessie 8.8

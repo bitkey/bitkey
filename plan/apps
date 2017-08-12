@@ -7,10 +7,10 @@ thunar-volman
 gvfs
 eject
 
-python-setuptools       /* electrum: installation */
-python-sip              /* electrum: virtual package providing sip-api-8.1 */
 python-qt4              /* electrum: qt gui interface */
-patch                   /* electrum: apply patches */
+python-pip		/* electrum: pip2 install */
+ssss			/* ssss: protect electrum seeds using Shamir's secret sharing scheme */
+expect			/* electrum: allows for automation of wallet generation */
 
 p7zip-full              /* as per feature request #11 */
 
