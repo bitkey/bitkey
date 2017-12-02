@@ -7,10 +7,24 @@ thunar-volman
 gvfs
 eject
 
-python-setuptools       /* electrum: installation */
+python3-setuptools
 python-sip              /* electrum: virtual package providing sip-api-8.1 */
-python-qt4              /* electrum: qt gui interface */
-patch                   /* electrum: apply patches */
+python3-pyqt5
+patch
+
+python-zbar
+python-jsonrpclib
+python-qrcode
+python-slowaes
+python-protobuf
+
+python3-ecdsa
+python3-requests
+python3-six
+python3-colorama
+python3-dnspython
+
+cheese
 
 p7zip-full              /* as per feature request #11 */
 

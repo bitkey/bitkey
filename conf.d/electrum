@@ -1,35 +1,17 @@
 #!/bin/bash -e
 
 SRC=/usr/local/src
-PATCHES=$SRC/electrum.patch
-
-# install electrum deps
-easy_install $SRC/ecdsa-*.tar.gz
-easy_install $SRC/slowaes-*.tar.gz
-easy_install $SRC/jsonrpclib-*.tar.gz
-easy_install $SRC/dnspython-*.zip
-easy_install $SRC/six-*.tar.gz
-easy_install $SRC/colorama-*.zip
-easy_install $SRC/protobuf-*.zip
-easy_install $SRC/qrcode-*.tar.gz
-easy_install $SRC/requests-*.tar.gz
-easy_install $SRC/pbkdf2-*.tar.gz
-rm $SRC/{ecdsa-*.tar.gz,slowaes-*.tar.gz,jsonrpclib-*.tar.gz,dnspython-*.zip}
-rm $SRC/{protobuf-*.zip,qrcode-*.tar.gz,requests-*.tar.gz,pbkdf2-*.tar.gz}
-rm $SRC/{six-*.tar.gz,colorama-*.zip}
 
 # unpack electrum and apply patches
 tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
 rm $SRC/Electrum-*.tar.gz
-patch -p1 -d $SRC/Electrum-* < $PATCHES
-rm -f $PATCHES
 
 # install electrum
 cd $SRC/Electrum-*
-python setup.py install
+python3 setup.py install
 cd -
 rm -rf $SRC/Electrum-*
 
 #fix protobuf permission
-chmod -R a+r /usr/local/lib/python2.7/dist-packages/protobuf*
+chmod -R a+r /usr/local/lib/python3.4/dist-packages/protobuf*
 
