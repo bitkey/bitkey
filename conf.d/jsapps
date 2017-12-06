@@ -30,4 +30,8 @@ rm coinbin-*.zip
 mv coinbin-*/ coinbin/
 mv coinbin.png coinbin/icon.png
 
+unzip webqr.zip
+rm webqr.zip
 
+unzip etherwallet*.zip
+rm etherwallet*.zip

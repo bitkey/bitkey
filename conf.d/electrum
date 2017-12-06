@@ -2,7 +2,27 @@
 
 SRC=/usr/local/src
 
-# unpack electrum and apply patches
+# unpack electrum-LTC
+tar -zxf $SRC/Electrum-LTC-*.tar.gz -C $SRC
+rm $SRC/Electrum-LTC-*.tar.gz
+
+# install electrum-LTC
+cd $SRC/Electrum-LTC-*
+python3 setup.py install
+cd -
+rm -rf $SRC/Electrum-LTC-*
+
+# unpack Electron Cash
+tar -zxf $SRC/electron-*.tar.gz -C $SRC
+rm $SRC/electron-*.tar.gz
+
+# install Electron Cash
+cd $SRC/electron-*
+python3 setup.py install
+cd -
+rm -rf $SRC/electron-*
+
+# unpack electrum
 tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
 rm $SRC/Electrum-*.tar.gz
 

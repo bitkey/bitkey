@@ -1,3 +1,19 @@
+ -- Estêvão Monteiro <https://github.com/estevaocm> Wed, 06 Dec 2017
+
+turnkey-bitkey-14.2.0-qrcode+ (1) turnkey; urgency=low
+
+  * Added Electrum-LTC
+  * Added Electron  
+  * Added MyEtherWallet  
+  
+ -- Estêvão Monteiro <https://github.com/estevaocm> Fri, 01 Dec 2017
+
+turnkey-bitkey-14.2.0-qrcode (1) turnkey; urgency=low
+
+  * Upgraded Electrum to 3.0.2
+  * Added webcam support through packages cheese and zbar
+  * Added generic web QR scanner
+
 turnkey-bitkey-14.2.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Jessie 8.8
