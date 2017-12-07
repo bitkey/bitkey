@@ -17,6 +17,7 @@ rm Electrum-LTC-*.tar.gz
 # unpack Electron Cash
 tar -zxf electron-*.tar.gz
 rm electron-*.tar.gz
+mv electrum-*/ electron-cash/
 
 # install Electron Cash
 # cd electrum-*
