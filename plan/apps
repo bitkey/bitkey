@@ -24,7 +24,6 @@ python3-requests
 python3-six
 python3-colorama
 python3-dnspython
-python3-pbkdf2
 
 cheese					/* required for webcam */
 

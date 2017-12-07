@@ -2,36 +2,37 @@
 
 SRC=/usr/local/src
 
+cd $SRC
+
 # unpack electrum-LTC
-tar -zxf $SRC/Electrum-LTC-*.tar.gz -C $SRC
-rm $SRC/Electrum-LTC-*.tar.gz
+tar -zxf Electrum-LTC-*.tar.gz
+rm Electrum-LTC-*.tar.gz
 
 # install electrum-LTC
-#cd $SRC/Electrum-LTC-*
-#python setup.py install
-#cd -
-#rm -rf $SRC/Electrum-LTC-*
+# cd Electrum-LTC-*
+# python3 setup.py install
+# cd -
+# rm -rf Electrum-LTC-*/
 
 # unpack Electron Cash
-tar -zxf $SRC/electron-*.tar.gz -C $SRC
-rm $SRC/electron-*.tar.gz
+tar -zxf electron-*.tar.gz
+rm electron-*.tar.gz
 
 # install Electron Cash
-cd $SRC/electrum-*
-python3 setup.py install
-cd -
-rm -rf $SRC/electrum-*
+# cd electrum-*
+# python3 setup.py install
+# cd -
+# rm -rf electrum-*/
 
 # unpack electrum
-tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
-rm $SRC/Electrum-*.tar.gz
+tar -zxf Electrum-*.tar.gz
+rm Electrum-*.tar.gz
 
 # install electrum
-cd $SRC/Electrum-*
+cd Electrum-*
 python3 setup.py install
 cd -
-rm -rf $SRC/Electrum-*
+# rm -rf Electrum-*/
 
 #fix protobuf permission
 chmod -R a+r /usr/local/lib/python3.4/dist-packages/protobuf*
-
