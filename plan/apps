@@ -7,6 +7,7 @@ thunar-volman
 gvfs
 eject
 
+/* electrum dependencies */
 python3-setuptools
 python-sip              /* electrum: virtual package providing sip-api-8.1 */
 python3-pyqt5
@@ -23,8 +24,31 @@ python3-requests
 python3-six
 python3-colorama
 python3-dnspython
+python3-pbkdf2
 
-cheese
+cheese					/* required for webcam */
+
+/* electrum-ltc dependencies */
+build-essential
+libssl-dev
+libffi-dev
+libpq-dev
+libxml2-dev
+libxslt1-dev
+libldap2-dev
+libsasl2-dev
+
+python-dev
+python-setuptools
+python-qt4	
+python-ecdsa	
+python-requests	
+python-colorama
+python-dnspython
+python-pbkdf2
+
+/* electron dependencies */
+python-pyqt5
 
 p7zip-full              /* as per feature request #11 */
 

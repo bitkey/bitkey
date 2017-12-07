@@ -7,20 +7,20 @@ tar -zxf $SRC/Electrum-LTC-*.tar.gz -C $SRC
 rm $SRC/Electrum-LTC-*.tar.gz
 
 # install electrum-LTC
-cd $SRC/Electrum-LTC-*
-python3 setup.py install
-cd -
-rm -rf $SRC/Electrum-LTC-*
+#cd $SRC/Electrum-LTC-*
+#python3 setup.py install
+#cd -
+#rm -rf $SRC/Electrum-LTC-*
 
 # unpack Electron Cash
 tar -zxf $SRC/electron-*.tar.gz -C $SRC
 rm $SRC/electron-*.tar.gz
 
 # install Electron Cash
-cd $SRC/electron-*
+cd $SRC/electrum-*
 python3 setup.py install
 cd -
-rm -rf $SRC/electron-*
+rm -rf $SRC/electrum-*
 
 # unpack electrum
 tar -zxf $SRC/Electrum-*.tar.gz -C $SRC
