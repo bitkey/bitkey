@@ -25,6 +25,15 @@ python3-six
 python3-colorama
 python3-dnspython
 
+/* electrum-ltc dependencies */
+
+python-qt4
+python-ecdsa
+python-requests
+python-six
+python-colorama
+python-dnspython
+
 cheese					/* required for webcam */
 
 p7zip-full              /* as per feature request #11 */
