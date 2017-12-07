@@ -28,28 +28,6 @@ python3-pbkdf2
 
 cheese					/* required for webcam */
 
-/* electrum-ltc dependencies */
-build-essential
-libssl-dev
-libffi-dev
-libpq-dev
-libxml2-dev
-libxslt1-dev
-libldap2-dev
-libsasl2-dev
-
-python-dev
-python-setuptools
-python-qt4	
-python-ecdsa	
-python-requests	
-python-colorama
-python-dnspython
-python-pbkdf2
-
-/* electron dependencies */
-python-pyqt5
-
 p7zip-full              /* as per feature request #11 */
 
 secure-delete

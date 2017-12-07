@@ -1,10 +1,10 @@
  -- Estêvão Monteiro <https://github.com/estevaocm> Wed, 06 Dec 2017
 
-turnkey-bitkey-14.2.0-qrcode+ (1) turnkey; urgency=low
+turnkey-bitkey-14.2.0-qrcode-ether (1) turnkey; urgency=low
 
-  * Added Electrum-LTC
-  * Added Electron  
   * Added MyEtherWallet  
+  * Added Electrum-LTC (compilation errors to fix)
+  * Added Electron (runtime errors to fix)
   
  -- Estêvão Monteiro <https://github.com/estevaocm> Fri, 01 Dec 2017
 
