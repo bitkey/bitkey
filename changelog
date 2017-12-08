@@ -1,3 +1,10 @@
+ -- Estêvão Monteiro <https://github.com/estevaocm> Thu, 07 Dec 2017
+
+turnkey-bitkey-14.2.0-qrcode-altcoins (1) turnkey; urgency=low
+
+  * Fixed Electrum-LTC
+  * Fixed Electron Cash
+  
  -- Estêvão Monteiro <https://github.com/estevaocm> Wed, 06 Dec 2017
 
 turnkey-bitkey-14.2.0-qrcode-ether (1) turnkey; urgency=low
