@@ -1,3 +1,11 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Sat, 09 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.1 (1) turnkey; urgency=low
+
+  * Electron Cash upgraded to 3.0.
+  * qtqr added, replacing WebQR.
+  * zbar-tools added
+  
  -- Steven Monteiro <https://github.com/estevaocm> Fri, 08 Dec 2017
 
 turnkey-bitkey-14.2.0-qrscan-altcoins-1.0 (1) turnkey; urgency=low
