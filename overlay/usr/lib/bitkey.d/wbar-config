@@ -52,8 +52,8 @@ i: /usr/local/share/icons/qrcode.png
 c: chromium-offline-app file:///usr/local/src/qrcode/index.html
 t: qrcode generator
 
-i: /usr/local/share/icons/qrscan.png
-c: chromium-offline-app file:///usr/local/src/webqr/webqr.html
+i: /usr/share/pixmaps/qtqr.png
+c: qtqr
 t: qrcode scanner
 
 i: /usr/share/icons/gnome/48x48/status/stock_lock.png
