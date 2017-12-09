@@ -1,13 +1,19 @@
+ -- Estêvão Monteiro <https://github.com/estevaocm> Fri, 08 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-v2 (1) turnkey; urgency=low
+
+  * Electrum-LTC, Electron Cash, MEW and WebQR included in menu
+  
  -- Estêvão Monteiro <https://github.com/estevaocm> Thu, 07 Dec 2017
 
-turnkey-bitkey-14.2.0-qrcode-altcoins (1) turnkey; urgency=low
+turnkey-bitkey-14.2.0-qrscan-altcoins (1) turnkey; urgency=low
 
   * Fixed Electrum-LTC
   * Fixed Electron Cash
   
  -- Estêvão Monteiro <https://github.com/estevaocm> Wed, 06 Dec 2017
 
-turnkey-bitkey-14.2.0-qrcode-ether (1) turnkey; urgency=low
+turnkey-bitkey-14.2.0-qrscan-ether (1) turnkey; urgency=low
 
   * Added MyEtherWallet  
   * Added Electrum-LTC (compilation errors to fix)
@@ -15,7 +21,7 @@ turnkey-bitkey-14.2.0-qrcode-ether (1) turnkey; urgency=low
   
  -- Estêvão Monteiro <https://github.com/estevaocm> Fri, 01 Dec 2017
 
-turnkey-bitkey-14.2.0-qrcode (1) turnkey; urgency=low
+turnkey-bitkey-14.2.0-qrscan (1) turnkey; urgency=low
 
   * Upgraded Electrum to 3.0.2
   * Added webcam support through packages cheese and zbar
