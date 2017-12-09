@@ -13,12 +13,12 @@ c: electrum-wrapper $mode >/dev/null
 t: electrum ($mode)
 
 i: /usr/local/src/electrum-ltc/icons/electrum-ltc.png
-c: electrum-ltc
-t: electrum-ltc
+c: electrum-ltc-wrapper $mode >/dev/null
+t: electrum-ltc ($mode)
 
 i: /usr/local/src/electron-cash/icons/electron_launcher.png
-c: electron-cash
-t: electron-cash
+c: electron-cash-wrapper $mode >/dev/null
+t: electron-cash ($mode)
 
 i: /usr/local/src/etherwallet-v3.10.9.2/images/icons/icon192.png
 c: chromium-offline-app file:///usr/local/src/etherwallet-v3.10.9.2/index.html
