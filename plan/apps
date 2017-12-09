@@ -15,6 +15,8 @@ python3-pyqt5			/* electrum: qt gui interface */
 patch                   /* electrum: apply patches */
 
 cheese					/* required for webcam */
+qtqr					/* QR code scanner for webcam */
+zbar-tools				/* QR utilities */
 
 p7zip-full              /* as per feature request #11 */
 

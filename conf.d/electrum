@@ -12,10 +12,6 @@ rm Electrum-LTC-*.tar.gz
 mv Electrum-LTC-*/ electrum-ltc/
 sudo ln -s $SRC/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
 sudo chmod +x /usr/local/bin/electrum-ltc
-#cd Electrum-LTC-*
-# python3 setup.py install
-#cd -
-# rm -rf Electrum-LTC-*/
 
 # unpack Electron Cash
 tar -zxf Electron-*.tar.gz
@@ -25,10 +21,6 @@ rm Electron-*.tar.gz
 mv Electron*/ electron-cash/
 sudo ln -s $SRC/electron-cash/electron-cash /usr/local/bin/electron-cash
 sudo chmod +x /usr/local/bin/electron-cash
-#cd electron-*
-# python3 setup.py install
-#cd -
-# rm -rf electron-*/
 
 # unpack electrum
 tar -zxf Electrum-*.tar.gz
@@ -38,10 +30,7 @@ rm Electrum-*.tar.gz
 mv Electrum-*/ electrum/
 sudo ln -s $SRC/electrum/electrum /usr/local/bin/electrum
 sudo chmod +x /usr/local/bin/electrum
-#cd Electrum-*
-#python3 setup.py install
-#cd -
-# rm -rf Electrum-*/
 
-#fix protobuf permission
-#chmod -R a+r /usr/local/lib/python3.4/dist-packages/protobuf*
+# copy dependencies from Electrum to Electron Cash
+mkdir electron-cash/packages/
+cp electrum/packages/* electron-cash/packages/ -R
