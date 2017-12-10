@@ -5,11 +5,11 @@ SRC=/usr/local/src
 cd $SRC
 
 # unpack electrum-LTC
-tar -zxf Electrum-LTC-*.tar.gz
-rm Electrum-LTC-*.tar.gz
+tar -zxf electrum-ltc-*.tar.gz
+rm electrum-ltc-*.tar.gz
 
 # install electrum-LTC
-mv Electrum-LTC-*/ electrum-ltc/
+mv electrum-ltc-*/ electrum-ltc/
 sudo ln -s $SRC/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
 sudo chmod +x /usr/local/bin/electrum-ltc
 
