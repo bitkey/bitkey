@@ -1,3 +1,10 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Sun, 10 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.2 (1) turnkey; urgency=low
+
+  * Electrum-LTC upgraded to 3.0.2 from Git to fix QR scanning.
+    Note that the stable release of Electrum-LTC is not available yet.
+  
  -- Steven Monteiro <https://github.com/estevaocm> Sat, 09 Dec 2017
 
 turnkey-bitkey-14.2.0-qrscan-altcoins-1.1 (1) turnkey; urgency=low
