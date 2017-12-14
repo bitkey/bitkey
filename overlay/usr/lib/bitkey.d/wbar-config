@@ -21,11 +21,11 @@ c: electron-cash-wrapper $mode >/dev/null
 t: Electron Cash ($mode)
 
 i: /usr/local/src/myetherwallet/images/icons/icon192.png
-c: firefox-offline-app file:///usr/local/src/myetherwallet/index.html
+c: firefox-app file:///usr/local/src/myetherwallet/index.html
 t: MyEtherWallet
 
 i: /usr/local/share/icons/wallet.png
-c: firefox-offline-app file:///usr/local/src/bip39-standalone.html
+c: firefox-app file:///usr/local/src/bip39-standalone.html
 t: BIP39 wallet
 
 EOF
@@ -41,7 +41,7 @@ fi
 
 cat >>$CONFIG<<EOF
 i: /usr/local/src/warpwallet/icon.png
-c: firefox-offline-app file:///usr/local/src/warpwallet/index.html
+c: chromium-offline-app file:///usr/local/src/warpwallet/index.html
 t: warpwallet
 
 i: /usr/share/icons/gnome/48x48/apps/fonts.png
