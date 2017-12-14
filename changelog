@@ -1,13 +1,27 @@
  -- Steven Monteiro <https://github.com/estevaocm> Sun, 10 Dec 2017
 
-turnkey-bitkey-14.2.0-qrscan-altcoins-1.2 (1) turnkey; urgency=low
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.03 (1) turnkey; urgency=low
+
+  * Added:
+  	- bip39-standalone-ab1bd64
+  	- firefox-57.0.2.tar
+  * Upgrades:
+  	- Electrum-3.0.3.tar
+  	- electrum-ltc-2017-12-11-d088f56
+  	- etherwallet-v3.10.10.0
+  	- coinbin-2017-12-09-64af126
+  	- bitaddress.org-3.3.0
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Sun, 10 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.02 (1) turnkey; urgency=low
 
   * Electrum-LTC upgraded to 3.0.2 from Git to fix QR scanning.
     Note that the stable release of Electrum-LTC is not available yet.
   
  -- Steven Monteiro <https://github.com/estevaocm> Sat, 09 Dec 2017
 
-turnkey-bitkey-14.2.0-qrscan-altcoins-1.1 (1) turnkey; urgency=low
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.01 (1) turnkey; urgency=low
 
   * Electron Cash upgraded to 3.0.
   * qtqr added, replacing WebQR.
