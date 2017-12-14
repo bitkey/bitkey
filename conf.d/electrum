@@ -5,8 +5,8 @@ SRC=/usr/local/src
 cd $SRC
 
 # unpack electrum-LTC
-tar -zxf electrum-ltc-*.tar.gz
-rm electrum-ltc-*.tar.gz
+unzip electrum-ltc-*.zip
+rm electrum-ltc-*.zip
 
 # install electrum-LTC
 mv electrum-ltc-*/ electrum-ltc/
