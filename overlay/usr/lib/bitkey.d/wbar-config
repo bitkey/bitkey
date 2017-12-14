@@ -21,7 +21,7 @@ c: electron-cash-wrapper $mode >/dev/null
 t: electron-cash ($mode)
 
 i: /usr/local/src/myetherwallet/images/icons/icon192.png
-c: chromium-offline-app file:///usr/local/src/myetherwallet/index.html
+c: firefox-offline-app file:///usr/local/src/myetherwallet/index.html
 t: my ether wallet
 
 EOF
