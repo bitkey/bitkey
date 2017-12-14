@@ -37,4 +37,4 @@ cp electrum/packages/* electron-cash/packages/ -R
 
 mkdir electrum-ltc/packages/
 cp electrum/packages/* electrum-ltc/packages/ -R
-pyrcc5 icons.qrc -o electrum-ltc/gui/qt/icons_rc.py
+pyrcc5 electrum-ltc/icons.qrc -o electrum-ltc/gui/qt/icons_rc.py
