@@ -24,7 +24,7 @@ i: /usr/local/src/myetherwallet/images/icons/icon192.png
 c: firefox-offline-app file:///usr/local/src/myetherwallet/index.html
 t: MyEtherWallet
 
-i: /usr/local/src/warpwallet/icon.png
+i: /usr/local/share/icons/wallet.png
 c: firefox-offline-app file:///usr/local/src/bip39-standalone.html
 t: BIP39 wallet
 
