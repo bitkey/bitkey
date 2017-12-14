@@ -31,4 +31,5 @@ mv coinbin-*/ coinbin/
 mv coinbin.png coinbin/icon.png
 
 unzip etherwallet*.zip
+mv etherwallet*/ myetherwallet/
 rm etherwallet*.zip
