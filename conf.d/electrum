@@ -34,3 +34,6 @@ sudo chmod +x /usr/local/bin/electrum
 # copy dependencies from Electrum to Electron Cash
 mkdir electron-cash/packages/
 cp electrum/packages/* electron-cash/packages/ -R
+
+mkdir electrum-ltc/packages/
+cp electrum/packages/* electrum-ltc/packages/ -R
