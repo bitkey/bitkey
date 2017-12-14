@@ -2,6 +2,11 @@
 
 SRC=/usr/local/src
 
+cd $SRC
+tar -xf firefox-*.tar.bz2
+rm firefox-*.tar.bz2
+sudo ln -s $SRC/firefox/firefox /usr/local/bin/firefox
+
 tar -zxf $SRC/zxcvbn/libs.tar.gz -C $SRC/zxcvbn
 rm $SRC/zxcvbn/libs.tar.gz
 
