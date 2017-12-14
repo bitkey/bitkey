@@ -24,12 +24,16 @@ i: /usr/local/src/myetherwallet/images/icons/icon192.png
 c: firefox-offline-app file:///usr/local/src/myetherwallet/index.html
 t: my ether wallet
 
+i: /usr/local/src/warpwallet/icon.png
+c: firefox-offline-app file:///usr/local/src/warpwallet/index.html
+t: warpwallet
+
 EOF
 
 if [ ! "$mode" = "cold-offline" ]; then
 cat >>$CONFIG<<EOF
-i: /usr/share/pixmaps/chromium.png
-c: chromium-wrapper
+i: /usr/local/src/firefox/browser/icons/mozicon128.png
+c: firefox-wrapper
 t: browser
 
 EOF
@@ -37,7 +41,7 @@ fi
 
 cat >>$CONFIG<<EOF
 i: /usr/local/src/warpwallet/icon.png
-c: chromium-offline-app file:///usr/local/src/warpwallet/index.html
+c: firefox-offline-app file:///usr/local/src/warpwallet/index.html
 t: warpwallet
 
 i: /usr/share/icons/gnome/48x48/apps/fonts.png
@@ -61,7 +65,7 @@ c: chromium-offline-app file:///usr/local/src/zxcvbn/index.html
 t: password strength
 
 i: /usr/local/src/coinbin/icon.png
-c: chromium-online-app file:///usr/local/src/coinbin/index.html
+c: firefox-app file:///usr/local/src/coinbin/index.html
 t: coinbin
 
 i: /usr/share/icons/gnome/48x48/apps/terminal.png

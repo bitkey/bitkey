@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+firefox --setDefaultBrowser --private-window https://bitkey.io/ &

@@ -13,6 +13,10 @@ rm $SRC/zxcvbn/libs.tar.gz
 tar -zxf $SRC/qrcode/libs.tar.gz -C $SRC/qrcode
 rm $SRC/qrcode/libs.tar.gz
 
+cd $SRC
+unzip bip39-*.zip
+rm bip39-*.zip
+
 unzip $SRC/bitaddress.org*.zip -d $SRC
 rm $SRC/bitaddress.org*.zip
 mv $SRC/bitaddress.org* $SRC/bitaddress.org
