@@ -10,23 +10,23 @@ t: /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf/10
 
 i: /usr/local/share/icons/electrum.png
 c: electrum-wrapper $mode >/dev/null
-t: electrum ($mode)
+t: Electrum ($mode)
 
 i: /usr/local/src/electrum-ltc/icons/electrum-ltc.png
 c: electrum-ltc-wrapper $mode >/dev/null
-t: electrum-ltc ($mode)
+t: Electrum-LTC ($mode)
 
 i: /usr/local/src/electron-cash/icons/electron_launcher.png
 c: electron-cash-wrapper $mode >/dev/null
-t: electron-cash ($mode)
+t: Electron Cash ($mode)
 
 i: /usr/local/src/myetherwallet/images/icons/icon192.png
 c: firefox-offline-app file:///usr/local/src/myetherwallet/index.html
-t: my ether wallet
+t: MyEtherWallet
 
 i: /usr/local/src/warpwallet/icon.png
-c: firefox-offline-app file:///usr/local/src/warpwallet/index.html
-t: warpwallet
+c: firefox-offline-app file:///usr/local/src/bip39-standalone.html
+t: BIP39 wallet
 
 EOF
 
@@ -34,7 +34,7 @@ if [ ! "$mode" = "cold-offline" ]; then
 cat >>$CONFIG<<EOF
 i: /usr/local/src/firefox/browser/icons/mozicon128.png
 c: firefox-wrapper
-t: browser
+t: Web browser
 
 EOF
 fi
@@ -58,7 +58,7 @@ t: qrcode generator
 
 i: /usr/share/pixmaps/qtqr.png
 c: qtqr
-t: qrcode scanner
+t: QR scanner
 
 i: /usr/share/icons/gnome/48x48/status/stock_lock.png
 c: chromium-offline-app file:///usr/local/src/zxcvbn/index.html
