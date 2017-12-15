@@ -35,6 +35,7 @@ t: Web browser
 EOF
 fi
 
+cat >>$CONFIG<<EOF
 i: /usr/share/pixmaps/qtqr.png
 c: qtqr
 t: QR scanner
