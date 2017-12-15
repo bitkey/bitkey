@@ -32,12 +32,13 @@ sudo ln -s $SRC/electrum/electrum /usr/local/bin/electrum
 sudo chmod +x /usr/local/bin/electrum
 
 # unpack Exodus
-unzip exodus-linux-x64-*.zip -d .
-rm exodus-linux-x64-*.zip
+unzip exodus-*.zip -d .
+rm exodus-*.zip
 
 # install Exodus
-sudo ln -s $SRC/Exodus-linux-x64/Exodus /usr/local/bin/Exodus
-sudo chmod +x /usr/local/bin/Exodus
+mv exodus-*/ exodus/
+sudo ln -s $SRC/exodus/Exodus /usr/local/bin/exodus
+sudo chmod +x /usr/local/bin/exodus
 
 # copy dependencies from Electrum to Electron Cash
 mkdir electron-cash/packages/

@@ -53,7 +53,7 @@ mount_path="/mnt/bitkey-data"
 mode="exodus"
 
 # verify electrum isn't running
-if pidof -x Exodus >/dev/null; then
+if pidof -x exodus >/dev/null; then
     fatal "Exodus is already running..."
 fi
 
