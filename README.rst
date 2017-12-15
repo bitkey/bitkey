@@ -1,3 +1,4 @@
+[ADD EXODUS BRANCH]
 BitKey is a swiss army knife of handy Bitcoin tools built on top of
 Debian, which we created to scratch our own itch.
 
