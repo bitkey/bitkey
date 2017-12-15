@@ -42,3 +42,7 @@ sudo chmod +x /usr/local/bin/Exodus
 # copy dependencies from Electrum to Electron Cash
 mkdir electron-cash/packages/
 cp electrum/packages/* electron-cash/packages/ -R
+
+mkdir electrum-ltc/packages/
+cp electrum/packages/* electrum-ltc/packages/ -R
+pyrcc5 electrum-ltc/icons.qrc -o electrum-ltc/gui/qt/icons_rc.py
