@@ -116,7 +116,7 @@ rm -f $infofile
 # start Exodus in foreground
 sudo chown -R user:user $mount_path
 wallet_path=$mount_path/$mode
-Exodus --datadir=$wallet_path
+exodus --datadir=$wallet_path
 
 # setup info dialog
 infofile=$(tempfile)
