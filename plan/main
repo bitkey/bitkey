@@ -46,3 +46,6 @@ printer-driver-sag-gdi
 printer-driver-splix
 cups-browsed
 avahi-daemon
+
+libgconf-2-4
+

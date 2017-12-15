@@ -5,8 +5,12 @@ CONFIG=/home/user/.wbar
 
 cat >$CONFIG<<EOF
 i: /usr/share/pixmaps/wbar/dock.png
-c: wbar --bpress --pos bottom --zoomf 1.3 --isize 72 --idist 4 --jumpf 1 --nanim 3 --balfa 25
+c: wbar --bpress --pos bottom --zoomf 1.3 --isize 36 --idist 4 --jumpf 1 --nanim 3 --balfa 25
 t: /usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf/10
+
+i: /usr/local/share/icons/exodus.png
+c: exodus-wrapper >/dev/null
+t: Exodus
 
 i: /usr/local/share/icons/electrum.png
 c: electrum-wrapper $mode >/dev/null
