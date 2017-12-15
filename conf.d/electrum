@@ -36,7 +36,7 @@ unzip exodus-*.zip -d .
 rm exodus-*.zip
 
 # install Exodus
-mv exodus-*/ exodus/
+mv Exodus-*/ exodus/
 sudo ln -s $SRC/exodus/Exodus /usr/local/bin/exodus
 sudo chmod +x /usr/local/bin/exodus
 
