@@ -1,3 +1,15 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Fri, 15 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.04 (1) turnkey; urgency=low
+
+  * Added:
+  	- Exodus online wallet (thanks to emartec)
+  	- Launcher page aggregating all offline JavaScript apps
+  * Modified:
+  	- Smaller wbar icons
+  * Upgraded:
+  	- electrum-ltc-2017-12-14-4546320 
+  
  -- Steven Monteiro <https://github.com/estevaocm> Thu, 14 Dec 2017
 
 turnkey-bitkey-14.2.0-qrscan-altcoins-1.03 (1) turnkey; urgency=low
