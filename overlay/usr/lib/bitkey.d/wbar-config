@@ -24,6 +24,10 @@ i: /usr/local/src/myetherwallet/images/icons/icon192.png
 c: firefox-app file:///usr/local/src/myetherwallet/index.html
 t: MyEtherWallet
 
+i: /usr/local/share/icons/ripple.png
+c: firefox-app file:///usr/local/src/minimalist-ripple-client.html
+t: Ripple
+
 i: /usr/local/share/icons/wallet.png
 c: chromium-offline-app file:///usr/local/share/jsapps.html
 t: Offline JavaScript Apps
