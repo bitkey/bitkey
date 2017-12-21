@@ -14,12 +14,20 @@ tar -zxf $SRC/qrcode/libs.tar.gz -C $SRC/qrcode
 rm $SRC/qrcode/libs.tar.gz
 
 cd $SRC
+unzip bip39-*.zip
+rm bip39-*.zip
+
+cd $SRC
 unzip minimalist-ripple-client.zip
 rm minimalist-ripple-client.zip
 
 cd $SRC
-unzip bip39-*.zip
-rm bip39-*.zip
+unzip iota-paper-wallet.zip -d iota-paper-wallet/ 
+rm iota-paper-wallet.zip
+
+cd $SRC
+unzip iota-seedgen.zip
+rm iota-seedgen.zip
 
 unzip $SRC/bitaddress.org*.zip -d $SRC
 rm $SRC/bitaddress.org*.zip

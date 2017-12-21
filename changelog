@@ -1,3 +1,14 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Wed, 20 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.05 (1) turnkey; urgency=low
+
+  * Added:
+    - Iota Paper Wallet
+    - Iota Seed Generator
+  	- Minimalist Ripple Client
+  * Modified:
+  	- Exodus wallet available offline for watching
+  
  -- Steven Monteiro <https://github.com/estevaocm> Fri, 15 Dec 2017
 
 turnkey-bitkey-14.2.0-qrscan-altcoins-1.04 (1) turnkey; urgency=low
