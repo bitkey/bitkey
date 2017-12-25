@@ -12,11 +12,11 @@ i: /usr/local/share/icons/electrum.png
 c: electrum-wrapper $mode >/dev/null
 t: Electrum ($mode)
 
-i: /usr/local/share/electrum-ltc/icons/electrum-ltc.png
+i: /usr/local/src/electrum-ltc/icons/electrum-ltc.png
 c: electrum-ltc-wrapper $mode >/dev/null
 t: Electrum-LTC ($mode)
 
-i: /usr/local/share/electron-cash/icons/electron_launcher.png
+i: /usr/local/src/electron-cash/icons/electron_launcher.png
 c: electron-cash-wrapper $mode >/dev/null
 t: Electron Cash ($mode)
 
