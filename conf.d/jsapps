@@ -12,10 +12,12 @@ rm firefox-*.tar.bz2
 mv firefox/ $LIB/firefox/
 sudo ln -s $LIB/firefox/firefox /usr/local/bin/firefox
 
-unzip Linux_x64_508578_chrome-linux.zip
+unzip *chrome-linux.zip
+rm *chrome-linux.zip
 sudo cp -rlf chrome-linux/* /usr/lib/chromium/
 rm -rf chrome-linux/
 sudo mv /usr/lib/chromium/chrome /usr/lib/chromium/chromium
+sudo chmod +x /usr/lib/chromium/chromium
 
 tar -zxf zxcvbn/libs.tar.gz -C $SRC/zxcvbn
 rm $SRC/zxcvbn/libs.tar.gz
