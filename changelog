@@ -1,3 +1,12 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Mon, 25 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.06 (1) turnkey; urgency=low
+
+  * Upgraded Chromium browser to version 63
+  * Removed Firefox browser
+  * Organized apps to install to either /usr/local/lib (compiled)
+    or /usr/local/share (interpreted)
+  
  -- Steven Monteiro <https://github.com/estevaocm> Thu, 21 Dec 2017
 
 turnkey-bitkey-14.2.0-qrscan-altcoins-1.05 (1) turnkey; urgency=low

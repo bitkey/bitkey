@@ -21,11 +21,11 @@ c: electron-cash-wrapper $mode >/dev/null
 t: Electron Cash ($mode)
 
 i: /usr/local/share/myetherwallet/images/icons/icon192.png
-c: firefox-app file:///usr/local/share/myetherwallet/index.html
+c: chromium-online-app file:///usr/local/share/myetherwallet/index.html
 t: MyEtherWallet
 
 i: /usr/local/share/icons/ripple.png
-c: firefox-app file:///usr/local/share/minripple/minimalist-ripple-client.html
+c: chromium-online-app file:///usr/local/share/minripple/minimalist-ripple-client.html
 t: Ripple
 
 i: /usr/local/share/icons/exodus.png
@@ -40,8 +40,8 @@ EOF
 
 if [ ! "$mode" = "cold-offline" ]; then
 cat >>$CONFIG<<EOF
-i: /usr/local/share/firefox/browser/icons/mozicon128.png
-c: firefox-wrapper
+i: /usr/share/pixmaps/chromium.png
+c: chromium-wrapper
 t: Web browser
 
 EOF

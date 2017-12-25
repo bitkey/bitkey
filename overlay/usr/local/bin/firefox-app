@@ -1,4 +1,0 @@
-#!/bin/bash -e
-
-url=$1
-firefox --setDefaultBrowser --private-window $url &

@@ -7,11 +7,6 @@ SRC=/usr/local/src
 
 cd $SRC
 
-tar -xf firefox-*.tar.bz2
-rm firefox-*.tar.bz2
-mv firefox/ $LIB/firefox/
-sudo ln -s $LIB/firefox/firefox /usr/local/bin/firefox
-
 unzip *chrome-linux.zip
 rm *chrome-linux.zip
 sudo cp -rlf chrome-linux/* /usr/lib/chromium/
