@@ -10,7 +10,7 @@ way to perform cold storage Bitcoin transactions where the wallet lives
 on an air-gapped system physically disconnected from the Internet.
 
 We used the TurnKey GNU/Linux build system to create a self-contained
-read-only CD/USB stick to satisfy all our Bitcoin needs. Your's too we
+read-only CD/USB stick to satisfy all our Bitcoin needs. Yours too we
 hope, and if not we're open to suggestions for improvement.
 
 Apps: batteries included!
@@ -21,16 +21,23 @@ Apps that are allowed network access in online mode:
 - Electrum with wrapper that stores wallet on a USB in a LUKS encrypted
   loopback filesystem. During creation, displays passphrase strength
   estimates such as entropy and crack time.
-
+- Electrum-LTC for Litecoin
+- Electron-Cash for Bitcoin Cash (BCH)
 - coinbin: swiss army knife of bitcoin tools
+- MyEtherWallet: also allows offline signing
+- Minimalistic Ripple Wallet
+- Exodus multi-coin wallet, which includes exchanging with ShapeShift
 
 Apps that are not allowed network access even in online mode:
 
+- qrcode generator: encodes anything as a qrcode
+- BIP39 paper wallet: supports 23 cryptocurrencies
+- IOTA seed generator
+- IOTA paper wallet
+- zxcvbn: realistic password strength estimator
 - warpwallet: brainwallet with strong KDF (scrypt+pbkdf2) and salt
 - bitaddress: paper wallet generator
 - bitcoinpaperwallet: paper wallet generator
-- qrcode generator: encodes anything as a qrcode
-- zxcvbn: realistic password strength estimator
 
 Advanced tools for Bitcoin ninjas:
 
@@ -54,7 +61,7 @@ Nothing special. CDROMs are naturally read-only and tamper resistant.
 
 BitKey on USB: If you don't burn BitKey to a CDROM, writing BitKey to a
 USB stick with a hardware read-write toggle (e.g., Kanguru FlashBlu) is
-the next best thing.
+the next best thing. Also loads the system much faster.
 
 On USB sticks without write protection, you can remove BitKey USB after
 booting as an additional security measure. BitKey loads into RAM so
@@ -113,6 +120,7 @@ Two cold storage modes:
 2) cold-online: watch wallet, prepare transactions
 
    In this mode, the desktop background is blue (mnemonic for cool and informative)
+   (cold-online mode has been disabled due to incompatiblity with Electrum 3)
 
 If the instructions are carefully followed, cold storage modes creates
 an airgap which ensures that your wallet's private keys are never loaded
