@@ -1,56 +1,59 @@
 #!/bin/bash -e
 
+HELP=/usr/local/share/doc/bitkey-help
+LIB=/usr/local/lib
+SHARE=/usr/local/share
 SRC=/usr/local/src
 
 cd $SRC
 tar -xf firefox-*.tar.bz2
 rm firefox-*.tar.bz2
-sudo ln -s $SRC/firefox/firefox /usr/local/bin/firefox
+mv firefox/ $LIB/firefox/
+sudo ln -s $LIB/firefox/firefox /usr/local/bin/firefox
 
-tar -zxf $SRC/zxcvbn/libs.tar.gz -C $SRC/zxcvbn
+tar -zxf $SRC/zxcvbn/libs.tar.gz -C $SHARE/zxcvbn
 rm $SRC/zxcvbn/libs.tar.gz
 
-tar -zxf $SRC/qrcode/libs.tar.gz -C $SRC/qrcode
+tar -zxf $SRC/qrcode/libs.tar.gz -C $SHARE/qrcode
 rm $SRC/qrcode/libs.tar.gz
 
-cd $SRC
 unzip bip39-*.zip
 rm bip39-*.zip
+mv bip39-*/ $SHARE/bip39/
 
-cd $SRC
 unzip minimalist-ripple-client.zip
 rm minimalist-ripple-client.zip
+mkdir $SHARE/minripple/
+mv minimalist-ripple-client.html $SHARE/minripple/
 
-cd $SRC
-unzip iota-paper-wallet.zip -d iota-paper-wallet/ 
+unzip iota-paper-wallet.zip 
 rm iota-paper-wallet.zip
+mv iota-paper-wallet/ $SHARE/iotapaperwallet 
 
-cd $SRC
 unzip iota-seedgen.zip
 rm iota-seedgen.zip
+mkdir $SHARE/iotaseedgen/
+mv iota-seedgen.html $SHARE/iotaseedgen/
 
-unzip $SRC/bitaddress.org*.zip -d $SRC
-rm $SRC/bitaddress.org*.zip
-mv $SRC/bitaddress.org* $SRC/bitaddress.org
+unzip bitaddress.org*.zip
+rm bitaddress.org*.zip
+mv bitaddress.org*/ $SHARE/bitaddress.org/
 
-unzip $SRC/bitcoinpaperwallet-master.zip -d $SRC
-rm $SRC/bitcoinpaperwallet-master.zip
-mv $SRC/bitcoinpaperwallet-master $SRC/bitcoinpaperwallet
-mv $SRC/paper-wallet.png $SRC/bitcoinpaperwallet
+unzip bitcoinpaperwallet-master.zip
+rm bitcoinpaperwallet-master.zip
+mv bitcoinpaperwallet-master/ $SHARE/bitcoinpaperwallet/
 
-HELP=/usr/local/share/doc/bitkey-help
-tar -zxf $HELP/assets.tar.gz -C $HELP
-rm $HELP/assets.tar.gz
+mkdir $SHARE/warpwallet/
+unzip warp_*.zip
+mv warp_*.html $SHARE/warpwallet/warpwallet.html
 
-cd $SRC/warpwallet
-ln -sf warp_*.html index.html
-
-cd $SRC
 unzip coinbin-*.zip
 rm coinbin-*.zip
-mv coinbin-*/ coinbin/
-mv coinbin.png coinbin/icon.png
+mv coinbin-*/ $SHARE/coinbin/
 
 unzip etherwallet*.zip
-mv etherwallet*/ myetherwallet/
+mv etherwallet*/ $SHARE/myetherwallet/
 rm etherwallet*.zip
+
+tar -zxf $HELP/assets.tar.gz -C $HELP
+rm $HELP/assets.tar.gz
