@@ -390,6 +390,12 @@ Specifics:
   from leaking information to the network, even in online mode on a non
   airgapped computer.
 
+- Webcam enabled for QR code scanning so no physical media communication is
+  required. This allows your private keys to remain perfectly secret, aside
+  from a BIOS attack. You should only communicate through QR codes, no USB
+  drives aside from the one containing the keys. Verify the QR codes' contents
+  at every exchange to make sure no malware is acting. 
+
 - All included components are open source
 
 - Best effort to verify integrity of source components
