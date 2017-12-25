@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+LIB=/usr/local/lib
+SHARE=/usr/local/share
 SRC=/usr/local/src
 
 cd $SRC
@@ -9,8 +11,8 @@ unzip electrum-ltc-*.zip
 rm electrum-ltc-*.zip
 
 # install electrum-LTC
-mv electrum-ltc-*/ electrum-ltc/
-sudo ln -s $SRC/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
+mv electrum-ltc-*/ $SHARE/electrum-ltc/
+sudo ln -s $SHARE/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
 sudo chmod +x /usr/local/bin/electrum-ltc
 
 # unpack Electron Cash
@@ -18,8 +20,8 @@ tar -zxf Electron-*.tar.gz
 rm Electron-*.tar.gz
 
 # install Electron Cash
-mv Electron*/ electron-cash/
-sudo ln -s $SRC/electron-cash/electron-cash /usr/local/bin/electron-cash
+mv Electron*/ $SHARE/electron-cash/
+sudo ln -s $SHARE/electron-cash/electron-cash /usr/local/bin/electron-cash
 sudo chmod +x /usr/local/bin/electron-cash
 
 # unpack electrum
@@ -27,8 +29,8 @@ tar -zxf Electrum-*.tar.gz
 rm Electrum-*.tar.gz
 
 # install electrum
-mv Electrum-*/ electrum/
-sudo ln -s $SRC/electrum/electrum /usr/local/bin/electrum
+mv Electrum-*/ $SHARE/electrum/
+sudo ln -s $SHARE//electrum/electrum /usr/local/bin/electrum
 sudo chmod +x /usr/local/bin/electrum
 
 # unpack Exodus
@@ -36,9 +38,11 @@ unzip exodus-*.zip -d .
 rm exodus-*.zip
 
 # install Exodus
-mv Exodus-*/ exodus/
-sudo ln -s $SRC/exodus/Exodus /usr/local/bin/exodus
+mv Exodus-*/ $LIB/exodus/
+sudo ln -s $LIB/exodus/Exodus /usr/local/bin/exodus
 sudo chmod +x /usr/local/bin/exodus
+
+cd $SHARE
 
 # copy dependencies from Electrum to Electron Cash
 mkdir electron-cash/packages/
