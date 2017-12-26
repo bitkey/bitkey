@@ -1,3 +1,10 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Tue, 26 Dec 2017
+ 
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.07 (1) turnkey; urgency=low
+ 
+  * Added Monero wallet generator
+  * Fixed Coinb.in for online use
+ 
  -- Steven Monteiro <https://github.com/estevaocm> Mon, 25 Dec 2017
 
 turnkey-bitkey-14.2.0-qrscan-altcoins-1.06 (1) turnkey; urgency=low
