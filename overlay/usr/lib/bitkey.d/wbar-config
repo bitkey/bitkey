@@ -20,26 +20,22 @@ i: /usr/local/share/electron-cash/icons/electron_launcher.png
 c: electron-cash-wrapper $mode >/dev/null
 t: Electron Cash ($mode)
 
-i: /usr/local/share/myetherwallet/images/icons/icon192.png
-c: chromium-online-app file:///usr/local/share/myetherwallet/index.html
-t: MyEtherWallet
-
-i: /usr/local/share/icons/ripple.png
-c: chromium-online-app file:///usr/local/share/minripple/minimalist-ripple-client.html
-t: Ripple
-
 i: /usr/local/share/icons/exodus.png
 c: exodus-wrapper >/dev/null
 t: Exodus
 
 i: /usr/local/share/icons/wallet.png
-c: chromium-offline-app file:///usr/local/share/cryptojsappslauncher/jsapps.html
-t: Offline JavaScript Apps
+c: chromium-offline-app file:///usr/local/share/cryptojsappslauncher/offline.html
+t: Offline Web Apps
 
 EOF
 
 if [ ! "$mode" = "cold-offline" ]; then
 cat >>$CONFIG<<EOF
+i: /usr/local/share/icons/wallet.png
+c: chromium-online-app file:///usr/local/share/cryptojsappslauncher/online.html
+t: Online Web Apps
+
 i: /usr/share/pixmaps/chromium.png
 c: chromium-wrapper
 t: Web browser
