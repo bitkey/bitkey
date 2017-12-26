@@ -7,14 +7,6 @@ SRC=/usr/local/src
 
 cd $SRC
 
-unzip *chrome-linux.zip
-rm *chrome-linux.zip
-sudo cp -rlf chrome-linux/* /usr/lib/chromium/
-rm -rf chrome-linux/
-sudo mv /usr/lib/chromium/chrome /usr/lib/chromium/chromium
-sudo chmod +x /usr/lib/chromium/chromium
-sudo chmod -R a+r /usr/lib/chromium/
-
 tar -zxf zxcvbn/libs.tar.gz -C $SRC/zxcvbn
 rm $SRC/zxcvbn/libs.tar.gz
 mv zxcvbn/ $SHARE/zxcvbn/
@@ -22,6 +14,10 @@ mv zxcvbn/ $SHARE/zxcvbn/
 tar -zxf qrcode/libs.tar.gz -C $SRC/qrcode
 rm $SRC/qrcode/libs.tar.gz
 mv qrcode/ $SHARE/qrcode/
+
+unzip monero-wallet-generator-c6e3ffb.zip
+rm monero-wallet-generator-c6e3ffb.zip
+mv monero-wallet-generator-master/ $SHARE/monero-wallet-generator/
 
 unzip bip39-*.zip
 rm bip39-*.zip
