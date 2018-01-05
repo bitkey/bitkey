@@ -6,6 +6,15 @@ SRC=/usr/local/src
 
 cd $SRC
 
+# unpack Electron Cash
+tar -zxf Electron-*.tar.gz
+rm Electron-*.tar.gz
+
+# install Electron Cash
+mv electrum*/ $SHARE/electron-cash/
+sudo ln -s $SHARE/electron-cash/electron-cash /usr/local/bin/electron-cash
+sudo chmod +x /usr/local/bin/electron-cash
+
 # unpack electrum-LTC
 unzip electrum-ltc-*.zip
 rm electrum-ltc-*.zip
@@ -14,15 +23,6 @@ rm electrum-ltc-*.zip
 mv electrum-ltc-*/ $SHARE/electrum-ltc/
 sudo ln -s $SHARE/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
 sudo chmod +x /usr/local/bin/electrum-ltc
-
-# unpack Electron Cash
-tar -zxf Electron-*.tar.gz
-rm Electron-*.tar.gz
-
-# install Electron Cash
-mv Electron*/ $SHARE/electron-cash/
-sudo ln -s $SHARE/electron-cash/electron-cash /usr/local/bin/electron-cash
-sudo chmod +x /usr/local/bin/electron-cash
 
 # unpack electrum
 tar -zxf Electrum-*.tar.gz

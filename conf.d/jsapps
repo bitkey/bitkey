@@ -24,6 +24,10 @@ rm bip39-*.zip
 mkdir $SHARE/bip39/
 mv bip39-standalone.html $SHARE/bip39/
 
+unzip ripple-wallet-*.zip
+rm ripple-wallet-*.zip
+mv ripple-wallet*/ $SHARE/ripple-wallet/
+
 unzip minimalist-ripple-client.zip
 rm minimalist-ripple-client.zip
 mkdir $SHARE/minripple/
@@ -55,9 +59,9 @@ unzip coinbin-*.zip
 rm coinbin-*.zip
 mv coinbin-*/ $SHARE/coinbin/
 
-unzip etherwallet*.zip
+tar -zxf etherwallet*.tar.gz
 mv etherwallet*/ $SHARE/myetherwallet/
-rm etherwallet*.zip
+rm etherwallet*.tar.gz
 
 tar -zxf $HELP/assets.tar.gz -C $HELP
 rm $HELP/assets.tar.gz
