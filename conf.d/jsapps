@@ -59,9 +59,9 @@ unzip coinbin-*.zip
 rm coinbin-*.zip
 mv coinbin-*/ $SHARE/coinbin/
 
-tar -zxf etherwallet*.tar.gz
+unzip etherwallet*.zip
 mv etherwallet*/ $SHARE/myetherwallet/
-rm etherwallet*.tar.gz
+rm etherwallet*.zip
 
 tar -zxf $HELP/assets.tar.gz -C $HELP
 rm $HELP/assets.tar.gz

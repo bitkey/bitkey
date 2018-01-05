@@ -47,6 +47,7 @@ cd $SHARE
 # copy dependencies from Electrum to Electron Cash
 mkdir electron-cash/packages/
 cp electrum/packages/* electron-cash/packages/ -R
+pyrcc5 electron-cash/icons.qrc -o electron-cash/gui/qt/icons_rc.py
 
 mkdir electrum-ltc/packages/
 cp electrum/packages/* electrum-ltc/packages/ -R
