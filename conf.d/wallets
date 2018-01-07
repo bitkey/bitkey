@@ -1,0 +1,63 @@
+#!/bin/bash -e
+
+LIB=/usr/local/lib
+SHARE=/usr/local/share
+SRC=/usr/local/src
+
+cd $SRC
+
+# unpack Electron Cash
+tar -zxf Electron-*.tar.gz
+rm Electron-*.tar.gz
+
+# install Electron Cash
+mv electrum*/ $SHARE/electron-cash/
+sudo ln -s $SHARE/electron-cash/electron-cash /usr/local/bin/electron-cash
+sudo chmod +x /usr/local/bin/electron-cash
+
+# unpack electrum-LTC
+unzip electrum-ltc-*.zip
+rm electrum-ltc-*.zip
+
+# install electrum-LTC
+mv electrum-ltc-*/ $SHARE/electrum-ltc/
+sudo ln -s $SHARE/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
+sudo chmod +x /usr/local/bin/electrum-ltc
+
+# unpack electrum
+tar -zxf Electrum-*.tar.gz
+rm Electrum-*.tar.gz
+
+# install electrum
+mv Electrum-*/ $SHARE/electrum/
+sudo ln -s $SHARE//electrum/electrum /usr/local/bin/electrum
+sudo chmod +x /usr/local/bin/electrum
+
+# unpack Exodus
+unzip exodus-*.zip -d .
+rm exodus-*.zip
+
+# install Exodus
+mv Exodus-*/ $LIB/exodus/
+sudo ln -s $LIB/exodus/Exodus /usr/local/bin/exodus
+sudo chmod +x /usr/local/bin/exodus
+
+# unpack CryptoSeed
+unzip CryptoSeed*.zip
+rm CryptoSeed*.zip
+
+# install CryptoSeed
+mv CryptoSeed*/ $LIB/cryptoseed/
+sudo ln -s $LIB/cryptoseed/cryptoseed /usr/local/bin/cryptoseed
+sudo chmod +x /usr/local/bin/cryptoseed
+
+cd $SHARE
+
+# copy dependencies from Electrum to Electron Cash
+mkdir electron-cash/packages/
+cp electrum/packages/* electron-cash/packages/ -R
+pyrcc5 electron-cash/icons.qrc -o electron-cash/gui/qt/icons_rc.py
+
+mkdir electrum-ltc/packages/
+cp electrum/packages/* electrum-ltc/packages/ -R
+pyrcc5 electrum-ltc/icons.qrc -o electrum-ltc/gui/qt/icons_rc.py
