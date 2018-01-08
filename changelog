@@ -7,10 +7,9 @@
     - Missing signature files that could be found
     - CryptoSeed 1.1.0
 	- Electrum-Dash (commit #6e51b7d, 2017-05-30)
-    - Ripple Wallet compatible with BIP39 Wallet (BIP44 address)
+    - Ripple Wallet compatible with BIP44 private key from BIP39 seed
   * Fixed:
-    - All app packages are identified by either version number or
-      Github commit ID and date.
+    - All app packages are identified by either version number or Github commit ID and date.
   * Upgraded:
   	- BIP39 Wallet 0.3.2
   	- Bitcoin Paper Wallet #6161c39 2017-09-22
