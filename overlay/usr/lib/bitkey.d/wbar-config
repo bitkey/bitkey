@@ -21,8 +21,8 @@ c: electron-cash-wrapper $mode >/dev/null
 t: Electron Cash ($mode)
 
 i: /usr/local/share/icons/electrum-dash.png
-c: electrum-dash
-t: Electrum Dash
+c: electrum-dash-wrapper $mode >/dev/null
+t: Electrum-Dash ($mode)
 
 i: /usr/local/share/icons/exodus.png
 c: exodus-wrapper >/dev/null
