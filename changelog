@@ -1,3 +1,26 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Mon, 08 Jan 2018
+ 
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.08 (1) turnkey; urgency=low
+ 
+  * Added:
+    - App packages checksum verification during system build
+    - CryptoSeed 1.1.0
+	- Electrum-Dash (commit #6e51b7d, 2017-05-30)
+    - Ripple Wallet compatible with BIP39 Wallet (BIP44 address)
+  * Fixed:
+    - All app packages are identified by either version number or
+      Github commit ID and date.
+  * Upgraded:
+  	- BIP39 Wallet 0.3.2
+  	- Bitcoin Paper Wallet #6161c39 2017-09-22
+  	- Coinb.in #c3b1a47 2018-01-06
+    - Electron Cash 3.1.1
+    - Electrum 3.0.4
+    - Electrum-LTC 3.0.4.1
+    - IOTA Seed Generator #faaae0c 2017-06-27
+    - MyEtherWallet 3.11.1.7
+    - Warp Wallet 1.0.9
+ 
  -- Steven Monteiro <https://github.com/estevaocm> Tue, 26 Dec 2017
  
  turnkey-bitkey-14.2.0-qrscan-altcoins-1.07 (1) turnkey; urgency=low
