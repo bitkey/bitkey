@@ -7,20 +7,20 @@ SRC=/usr/local/src
 cd $SRC
 
 # unpack Electron Cash
-tar -zxf Electron-*.tar.gz
-rm Electron-*.tar.gz
+tar -zxf Electron*.tar.gz
+rm Electron*.tar.gz
 
 # install Electron Cash
-mv electrum*/ $SHARE/electron-cash/
+mv Electron*/ $SHARE/electron-cash/
 sudo ln -s $SHARE/electron-cash/electron-cash /usr/local/bin/electron-cash
 sudo chmod +x /usr/local/bin/electron-cash
 
 # unpack electrum-LTC
-unzip electrum-ltc-*.zip
-rm electrum-ltc-*.zip
+tar -zxf Electrum-LTC-*.tar.gz
+rm Electrum-LTC-*.tar.gz
 
 # install electrum-LTC
-mv electrum-ltc-*/ $SHARE/electrum-ltc/
+mv Electrum-LTC-*/ $SHARE/electrum-ltc/
 sudo ln -s $SHARE/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
 sudo chmod +x /usr/local/bin/electrum-ltc
 
@@ -55,15 +55,15 @@ sudo chmod +x /usr/local/bin/cryptoseed
 unzip electrum-dash*.zip
 rm electrum-dash*.zip
 mv electrum-dash-master/ electrum-dash/
-unzip electrum-2.9.3-packages.zip
-mv packages/ electrum-dash/packages/
+# unzip electrum-2.9.3-packages.zip
+# mv packages/ electrum-dash/packages/
 rm electrum-2.9.3-packages.zip
 
 # install electrum-dash
 mv electrum-dash/ $SHARE/electrum-dash/
 sudo ln -s $SHARE/electrum-dash/electrum /usr/local/bin/electrum-dash
 sudo chmod +x /usr/local/bin/electrum-dash
-sudo pyrcc4 $SHARE/electrum-dash/icons.qrc -o $SHARE/electrum-dash/gui/qt/icons_rc.py
+#sudo pyrcc4 $SHARE/electrum-dash/icons.qrc -o $SHARE/electrum-dash/gui/qt/icons_rc.py
 
 cd $SHARE
 
@@ -72,6 +72,10 @@ mkdir electron-cash/packages/
 cp electrum/packages/* electron-cash/packages/ -R
 pyrcc5 electron-cash/icons.qrc -o electron-cash/gui/qt/icons_rc.py
 
-mkdir electrum-ltc/packages/
-cp electrum/packages/* electrum-ltc/packages/ -R
-pyrcc5 electrum-ltc/icons.qrc -o electrum-ltc/gui/qt/icons_rc.py
+#mkdir electrum-ltc/packages/
+#cp electrum/packages/* electrum-ltc/packages/ -R
+#pyrcc5 electrum-ltc/icons.qrc -o electrum-ltc/gui/qt/icons_rc.py
+
+mkdir electrum-dash/packages/
+cp electrum/packages/* electrum-dash/packages/ -R
+pyrcc5 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py

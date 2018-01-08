@@ -15,8 +15,8 @@ tar -zxf qrcode/libs.tar.gz -C $SRC/qrcode
 rm $SRC/qrcode/libs.tar.gz
 mv qrcode/ $SHARE/qrcode/
 
-unzip monero-wallet-generator-c6e3ffb.zip
-rm monero-wallet-generator-c6e3ffb.zip
+unzip monero-wallet-generator*.zip
+rm monero-wallet-generator*.zip
 mv monero-wallet-generator-master/ $SHARE/monero-wallet-generator/
 
 unzip bip39-*.zip
@@ -28,14 +28,14 @@ unzip ripple-wallet-*.zip
 rm ripple-wallet-*.zip
 mv ripple-wallet*/ $SHARE/ripple-wallet/
 
-unzip minimalist-ripple-client.zip
-rm minimalist-ripple-client.zip
+unzip minimalist-ripple-client*.zip
+rm minimalist-ripple-client*.zip
 mkdir $SHARE/minripple/
 mv minimalist-ripple-client.html $SHARE/minripple/
 
 mkdir $SHARE/iotapaperwallet
-unzip iota-paper-wallet.zip -d $SHARE/iotapaperwallet 
-rm iota-paper-wallet.zip
+unzip iota-paper-wallet*.zip -d $SHARE/iotapaperwallet 
+rm iota-paper-wallet*.zip
 
 unzip iota-seedgen.zip
 rm iota-seedgen.zip
@@ -46,18 +46,18 @@ unzip bitaddress.org*.zip
 rm bitaddress.org*.zip
 mv bitaddress.org*/ $SHARE/bitaddress.org/
 
-unzip bitcoinpaperwallet-master.zip
-rm bitcoinpaperwallet-master.zip
-mv bitcoinpaperwallet-master/ $SHARE/bitcoinpaperwallet/
+unzip bitcoinpaperwallet*.zip
+rm bitcoinpaperwallet*.zip
+mv bitcoinpaperwallet*/ $SHARE/bitcoinpaperwallet/
 
 mkdir $SHARE/warpwallet/
 unzip warp_*.zip
 rm warp_*.zip
 mv warp_*.html $SHARE/warpwallet/warpwallet.html
 
-unzip coinbin-*.zip
-rm coinbin-*.zip
-mv coinbin-*/ $SHARE/coinbin/
+unzip coinbin*.zip
+rm coinbin*.zip
+mv coinbin*/ $SHARE/coinbin/
 
 unzip etherwallet*.zip
 mv etherwallet*/ $SHARE/myetherwallet/
