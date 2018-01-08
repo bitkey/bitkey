@@ -60,7 +60,7 @@ mv packages/ electrum-dash/packages/
 rm electrum-2.9.3-packages.zip
 
 # install electrum-dash
-pyrcc5 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py
+pyrcc4 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py
 mv electrum-dash/ $SHARE/electrum-dash/
 sudo ln -s $SHARE/electrum-dash/electrum /usr/local/bin/electrum-dash
 sudo chmod +x /usr/local/bin/electrum-dash
