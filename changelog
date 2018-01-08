@@ -4,6 +4,7 @@
  
   * Added:
     - App packages checksum verification during system build
+    - Missing signature files that could be found
     - CryptoSeed 1.1.0
 	- Electrum-Dash (commit #6e51b7d, 2017-05-30)
     - Ripple Wallet compatible with BIP39 Wallet (BIP44 address)
