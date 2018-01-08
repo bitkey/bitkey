@@ -37,10 +37,9 @@ mkdir $SHARE/iotapaperwallet
 unzip iota-paper-wallet*.zip -d $SHARE/iotapaperwallet 
 rm iota-paper-wallet*.zip
 
-unzip iota-seedgen.zip
-rm iota-seedgen.zip
-mkdir $SHARE/iotaseedgen/
-mv iota-seedgen.html $SHARE/iotaseedgen/
+unzip iota-seedgen*.zip
+rm iota-seedgen*.zip
+mv seedgen-master/ $SHARE/iotaseedgen/
 
 unzip bitaddress.org*.zip
 rm bitaddress.org*.zip

@@ -12,7 +12,6 @@ python3-setuptools		/* electrum: installation */
 python-sip              /* electrum: virtual package providing sip-api-8.1 */
 python-qt4              /* electrum: qt gui interface */
 python3-pyqt5			/* electrum: qt gui interface */
-pyqt4-dev-tools			/* electrum: compile icons */
 pyqt5-dev-tools			/* electrum: compile icons */
 patch                   /* electrum: apply patches */
 
