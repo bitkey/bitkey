@@ -52,7 +52,7 @@ mv bitcoinpaperwallet*/ $SHARE/bitcoinpaperwallet/
 mkdir $SHARE/warpwallet/
 unzip warp_*.zip
 rm warp_*.zip
-mv warp_*.html $SHARE/warpwallet/warpwallet.html
+cp warp_*.html $SHARE/warpwallet/warpwallet.html
 
 unzip coinbin*.zip
 rm coinbin*.zip
