@@ -1,4 +1,0 @@
-# MD5 hash
-2fea3b2590166cb82a28f12d284fa212  Electrum-LTC-3.0.4.1.tar.gz
-# SHA-256 hash
-9c28d0095f8daccefbd01f86520d409dbc3e35c9581b891127f9d40455b8d81e  Electrum-LTC-3.0.4.1.tar.gz
