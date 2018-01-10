@@ -1,5 +1,12 @@
  -- Steven Monteiro <https://github.com/estevaocm> Mon, 08 Jan 2018
  
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.09 (1) turnkey; urgency=low
+  * Upgraded:
+    - Electron Cash 3.1.2
+    - Electrum 3.0.5
+    - Electrum-LTC 3.0.5.1
+    - MyEtherWallet 3.11.2
+ 
  turnkey-bitkey-14.2.0-qrscan-altcoins-1.08 (1) turnkey; urgency=low
  
   * Added:
