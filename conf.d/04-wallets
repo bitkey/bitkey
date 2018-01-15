@@ -24,6 +24,20 @@ mv Electrum-LTC-*/ $SHARE/electrum-ltc/
 sudo ln -s $SHARE/electrum-ltc/electrum-ltc /usr/local/bin/electrum-ltc
 sudo chmod +x /usr/local/bin/electrum-ltc
 
+# unpack electrum-dash
+tar -zxf Electrum-DASH-*.tar.gz
+rm Electrum-DASH-*.tar.gz
+mv Electrum-DASH*/ electrum-dash/
+unzip electrum-2.9.3-packages.zip
+mv packages/ electrum-dash/packages/
+rm electrum-2.9.3-packages.zip
+
+# install electrum-dash
+pyrcc4 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py
+mv electrum-dash/ $SHARE/electrum-dash/
+sudo ln -s $SHARE/electrum-dash/electrum /usr/local/bin/electrum-dash
+sudo chmod +x /usr/local/bin/electrum-dash
+
 # unpack electrum
 tar -zxf Electrum-*.tar.gz
 rm Electrum-*.tar.gz
@@ -50,20 +64,6 @@ rm CryptoSeed*.zip
 mv CryptoSeed*/ $LIB/cryptoseed/
 sudo ln -s $LIB/cryptoseed/cryptoseed /usr/local/bin/cryptoseed
 sudo chmod +x /usr/local/bin/cryptoseed
-
-# unpack electrum-dash
-unzip electrum-dash*.zip
-rm electrum-dash*.zip
-mv electrum-dash-master/ electrum-dash/
-unzip electrum-2.9.3-packages.zip
-mv packages/ electrum-dash/packages/
-rm electrum-2.9.3-packages.zip
-
-# install electrum-dash
-pyrcc4 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py
-mv electrum-dash/ $SHARE/electrum-dash/
-sudo ln -s $SHARE/electrum-dash/electrum /usr/local/bin/electrum-dash
-sudo chmod +x /usr/local/bin/electrum-dash
 
 cd $SHARE
 
