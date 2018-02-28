@@ -47,8 +47,8 @@ sudo ln -s $SHARE/electrum/electrum /usr/local/bin/electrum
 sudo chmod +x /usr/local/bin/electrum
 
 # install electrum-dash dependencies
-mkdir $SHARE/electrum-dash/packages/
-cp $SHARE/electrum/packages/* $SHARE/electrum-dash/packages/ -R  
+#mkdir $SHARE/electrum-dash/packages/
+/bin/cp $SHARE/electrum/packages/* $SHARE/electrum-dash/packages/ -R  
 
 # unpack Exodus
 unzip exodus-*.zip -d .
