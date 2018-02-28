@@ -2,6 +2,16 @@
  
  turnkey-bitkey-14.2.0-qrscan-altcoins-1.09 (1) turnkey; urgency=low
   * Upgraded:
+  	- BIP39 wallet 0.3.3
+  	- Electrum 3.0.6
+  	- Electrum-DASH 2.9.3.2
+  	- Electrum-LTC 3.0.6.2
+  	- Exodus 1.45.0
+  	- MyEtherWallet 3.20.01
+  	- Ripple Wallet 1.2.4
+  
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.09 (1) turnkey; urgency=low
+  * Upgraded:
     - Electron Cash 3.1.2
     - Electrum 3.0.5
     - Electrum-LTC 3.0.5.1
