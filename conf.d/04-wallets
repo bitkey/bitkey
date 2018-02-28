@@ -29,7 +29,9 @@ tar -zxf Electrum-DASH-*.tar.gz
 rm Electrum-DASH-*.tar.gz
 
 # install electrum-dash
+#pyrcc4 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py
 mv Electrum-DASH*/ $SHARE/electrum-dash/
+#sudo python $SHARE/electrum-dash/setup.py install
 sudo ln -s $SHARE/electrum-dash/electrum-dash /usr/local/bin/electrum-dash
 sudo chmod +x /usr/local/bin/electrum-dash
 

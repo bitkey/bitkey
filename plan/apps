@@ -15,6 +15,7 @@ python3-pyqt5			/* electrum: qt gui interface */
 pyqt4-dev-tools			/* electrum: compile icons */
 pyqt5-dev-tools			/* electrum: compile icons */
 patch                   /* electrum: apply patches */
+libusb-1.0-0-dev		/* electrum-dash */
 
 cheese					/* required for webcam */
 qtqr					/* QR code scanner for webcam */
