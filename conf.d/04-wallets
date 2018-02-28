@@ -27,10 +27,12 @@ sudo chmod +x /usr/local/bin/electrum-ltc
 # unpack electrum-dash
 tar -zxf Electrum-DASH-*.tar.gz
 rm Electrum-DASH-*.tar.gz
+mv Electrum-DASH*/ $SHARE/electrum-dash/
+unzip electrum-dash-packages.zip -d $SHARE/electrum-dash/
+rm electrum-dash-packages.zip
 
 # install electrum-dash
-#pyrcc4 electrum-dash/icons.qrc -o electrum-dash/gui/qt/icons_rc.py
-mv Electrum-DASH*/ $SHARE/electrum-dash/
+pyrcc4 $SHARE/electrum-dash/icons.qrc -o $SHARE/electrum-dash/gui/qt/icons_rc.py
 #sudo python $SHARE/electrum-dash/setup.py install
 sudo ln -s $SHARE/electrum-dash/electrum-dash /usr/local/bin/electrum-dash
 sudo chmod +x /usr/local/bin/electrum-dash
@@ -49,7 +51,7 @@ unzip exodus-*.zip -d .
 rm exodus-*.zip
 
 # install Exodus
-mv Exodus-*/ $LIB/exodus/
+mv Exodus*/ $LIB/exodus/
 sudo ln -s $LIB/exodus/Exodus /usr/local/bin/exodus
 sudo chmod +x /usr/local/bin/exodus
 
