@@ -136,10 +136,10 @@ Electrum 3. So your wallet's master public key must be manually exported to a
 cold-online wallet. It may be most convenient to generate the QR code for the master 
 public key, then scan it from the Electrum app for Android to create a watch-only
 wallet. The watch-only wallet allows you to check your balance and history, prepare
-and broadcast transactions, but not sign transactions. If you only sign your
-transactions in cold-offline mode and successfully keep your master private key 
-secret, your funds cannot be stolen by a network attack. Since this version of Bitkey
-includes webcam support, you may use the cam to scan the QR code of the prepared
+and broadcast transactions, but not sign transactions. If you only ever sign your
+transactions in cold-offline mode and never otherwise compromise your secret master 
+private key, your funds cannot be stolen by a network attack. Since this version of 
+Bitkey includes webcam support, you may use the cam to scan the QR code of the prepared
 transaction for signing, thus never exposing Bitkey or your wallet to harmful files.
 For more information, refer to http://docs.electrum.org/en/latest/coldstorage.html
 
