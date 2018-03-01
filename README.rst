@@ -23,15 +23,19 @@ Apps that are allowed network access in online mode:
   estimates such as entropy and crack time.
 - Electrum-LTC for Litecoin
 - Electron-Cash for Bitcoin Cash (BCH)
-- coinbin: swiss army knife of bitcoin tools
+- Electrum-DASH for DASH
 - MyEtherWallet: also allows offline signing
+- Ripple Wallet
 - Minimalistic Ripple Wallet
+- Coinb.in: swiss army knife of bitcoin tools
 - Exodus multi-coin wallet, which includes exchanging with ShapeShift
+- CryptoSeed
 
 Apps that are not allowed network access even in online mode:
 
 - qrcode generator: encodes anything as a qrcode
-- BIP39 paper wallet: supports 23 cryptocurrencies
+- BIP39 paper wallet: supports 32 cryptocurrencies
+- Monero paper wallet
 - IOTA seed generator
 - IOTA paper wallet
 - zxcvbn: realistic password strength estimator
@@ -46,7 +50,7 @@ Advanced tools for Bitcoin ninjas:
 Other:
 
 - Chromium web browser: runs in incognito mode by default (only
-  visible in online mode)
+  visible in online mode), updated beyond default Debian Jessie
 
 - Network manager
 - Printer manager
