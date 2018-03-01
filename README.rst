@@ -28,6 +28,8 @@ Apps that are allowed network access in online mode:
 - Ripple Wallet
 - Minimalistic Ripple Wallet
 - Coinb.in: swiss army knife of bitcoin tools
+- QtQR for QR code scanning with webcam
+- zbar-tools as an alternative to QtQR
 - Exodus multi-coin wallet, which includes exchanging with ShapeShift
 - CryptoSeed
 
@@ -129,8 +131,8 @@ If the instructions are carefully followed, cold storage modes creates
 an airgap which ensures that your wallet's private keys are never loaded
 into RAM on a computer connected to the Internet.
 
-Please note that cold-online mode has been disabled due to no longer being supported
-by Electrum 3. Your wallet's master public key must now be manually exported to a
+Attention: cold-online mode has been disabled due to no longer being supported by
+Electrum 3. So your wallet's master public key must be manually exported to a
 cold-online wallet. It may be most convenient to generate the QR code for the master 
 public key, then scan it from the Electrum app for Android to create a watch-only
 wallet. The watch-only wallet allows you to check your balance and history, prepare
@@ -139,6 +141,7 @@ transactions in cold-offline mode and successfully keep your master private key
 secret, your funds cannot be stolen by a network attack. Since this version of Bitkey
 includes webcam support, you may use the cam to scan the QR code of the prepared
 transaction for signing, thus never exposing Bitkey or your wallet to harmful files.
+For more information, refer to http://docs.electrum.org/en/latest/coldstorage.html
 
 Medium security - Hot-online boot mode (red background)
 -------------------------------------------------------
