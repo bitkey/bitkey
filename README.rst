@@ -124,11 +124,21 @@ Two cold storage modes:
 2) cold-online: watch wallet, prepare transactions
 
    In this mode, the desktop background is blue (mnemonic for cool and informative)
-   (cold-online mode has been disabled due to incompatiblity with Electrum 3)
 
 If the instructions are carefully followed, cold storage modes creates
 an airgap which ensures that your wallet's private keys are never loaded
 into RAM on a computer connected to the Internet.
+
+Please note that cold-online mode has been disabled due to no longer being supported
+by Electrum 3. Your wallet's master public key must now be manually exported to a
+cold-online wallet. It may be most convenient to generate the QR code for the master 
+public key, then scan it from the Electrum app for Android to create a watch-only
+wallet. The watch-only wallet allows you to check your balance and history, prepare
+and broadcast transactions, but not sign transactions. If you only sign your
+transactions in cold-offline mode and successfully keep your master private key 
+secret, your funds cannot be stolen by a network attack. Since this version of Bitkey
+includes webcam support, you may use the cam to scan the QR code of the prepared
+transaction for signing, thus never exposing Bitkey or your wallet to harmful files.
 
 Medium security - Hot-online boot mode (red background)
 -------------------------------------------------------
