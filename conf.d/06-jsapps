@@ -7,8 +7,8 @@ SRC=/usr/local/src
 
 cd $SRC
 
-tar -zxf zxcvbn/libs.tar.gz -C $SRC/zxcvbn
-rm $SRC/zxcvbn/libs.tar.gz
+#tar -zxf zxcvbn/libs.tar.gz -C $SRC/zxcvbn
+#rm $SRC/zxcvbn/libs.tar.gz
 mv zxcvbn/ $SHARE/zxcvbn/
 
 tar -zxf qrcode/libs.tar.gz -C $SRC/qrcode
