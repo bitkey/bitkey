@@ -13,6 +13,9 @@ We used the TurnKey GNU/Linux build system to create a self-contained
 read-only CD/USB stick to satisfy all our Bitcoin needs. Yours too we
 hope, and if not we're open to suggestions for improvement.
 
+In December 2017, the project was forked to update all software and
+include webcam support for QR code scanning and additional altcoin wallets.
+
 Apps: batteries included!
 =========================
 
