@@ -441,7 +441,7 @@ BitKey is built with `TKLDev`_, the TurnKey GNU/Linux build system.
 
 	ssh tkldev
 	cd products
-	git-clone https://github.com/bitkey/bitkey
+	git-clone https://github.com/estevaocm/bitkey
 
 	cd bitkey
 	make
