@@ -39,7 +39,7 @@ Apps that are allowed network access in online mode:
 Apps that are not allowed network access even in online mode:
 
 - qrcode generator: encodes anything as a qrcode
-- BIP39 paper wallet: supports 32 cryptocurrencies
+- BIP39 Mnemonic Code Converter: paper wallet seeds for 32 cryptocurrencies
 - Monero paper wallet
 - IOTA seed generator
 - IOTA paper wallet
