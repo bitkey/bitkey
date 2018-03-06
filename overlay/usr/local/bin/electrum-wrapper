@@ -134,12 +134,13 @@ infofile=$(tempfile)
 info-dialog --title="electrum-wrapper" $infofile &
 trap "rm -f -- '$infofile'" INT TERM EXIT
 
+echo seedless watch wallet is disabled for lack of the deseed function
 # create seedless watch wallet (cold-online)
-if [ -e "$wallet_path" ] && [ ! -e "$storage_path/cold-online" ]; then
-    info "creating $storage_path/cold-online..."
-    echo y | electrum deseed -w $wallet_path
-    mv $wallet_path.seedless $storage_path/cold-online
-fi
+#if [ -e "$wallet_path" ] && [ ! -e "$storage_path/cold-online" ]; then
+    #info "creating $storage_path/cold-online..."
+    #echo y | electrum deseed -w $wallet_path
+    #mv $wallet_path.seedless $storage_path/cold-online
+#fi
 
 # umount encrypted storage
 info "syncing filesystem..."

@@ -10,8 +10,11 @@ way to perform cold storage Bitcoin transactions where the wallet lives
 on an air-gapped system physically disconnected from the Internet.
 
 We used the TurnKey GNU/Linux build system to create a self-contained
-read-only CD/USB stick to satisfy all our Bitcoin needs. Your's too we
+read-only CD/USB stick to satisfy all our Bitcoin needs. Yours too we
 hope, and if not we're open to suggestions for improvement.
+
+In December 2017, the project was forked to update all software and
+include webcam support for QR code scanning and additional altcoin wallets.
 
 Apps: batteries included!
 =========================
@@ -21,16 +24,29 @@ Apps that are allowed network access in online mode:
 - Electrum with wrapper that stores wallet on a USB in a LUKS encrypted
   loopback filesystem. During creation, displays passphrase strength
   estimates such as entropy and crack time.
-
-- coinbin: swiss army knife of bitcoin tools
+- Electrum-LTC for Litecoin
+- Electron-Cash for Bitcoin Cash (BCH)
+- Electrum-DASH for DASH
+- MyEtherWallet: also allows offline signing
+- Ripple Wallet
+- Minimalistic Ripple Wallet
+- Coinb.in: swiss army knife of bitcoin tools
+- QtQR for QR code scanning with webcam
+- zbar-tools as an alternative to QtQR
+- Exodus multi-coin wallet, which includes exchanging with ShapeShift
+- CryptoSeed
 
 Apps that are not allowed network access even in online mode:
 
+- qrcode generator: encodes anything as a qrcode
+- BIP39 Mnemonic Code Converter: paper wallet seeds for 32 cryptocurrencies
+- Monero paper wallet
+- IOTA seed generator
+- IOTA paper wallet
+- zxcvbn: realistic password strength estimator
 - warpwallet: brainwallet with strong KDF (scrypt+pbkdf2) and salt
 - bitaddress: paper wallet generator
 - bitcoinpaperwallet: paper wallet generator
-- qrcode generator: encodes anything as a qrcode
-- zxcvbn: realistic password strength estimator
 
 Advanced tools for Bitcoin ninjas:
 
@@ -39,7 +55,7 @@ Advanced tools for Bitcoin ninjas:
 Other:
 
 - Chromium web browser: runs in incognito mode by default (only
-  visible in online mode)
+  visible in online mode), updated beyond default Debian Jessie
 
 - Network manager
 - Printer manager
@@ -54,7 +70,7 @@ Nothing special. CDROMs are naturally read-only and tamper resistant.
 
 BitKey on USB: If you don't burn BitKey to a CDROM, writing BitKey to a
 USB stick with a hardware read-write toggle (e.g., Kanguru FlashBlu) is
-the next best thing.
+the next best thing. Also loads the system much faster.
 
 On USB sticks without write protection, you can remove BitKey USB after
 booting as an additional security measure. BitKey loads into RAM so
@@ -117,6 +133,18 @@ Two cold storage modes:
 If the instructions are carefully followed, cold storage modes creates
 an airgap which ensures that your wallet's private keys are never loaded
 into RAM on a computer connected to the Internet.
+
+Attention: cold-online mode has been disabled due to no longer being supported by
+Electrum 3. So your wallet's master public key must be manually exported to a
+cold-online wallet. It may be most convenient to generate the QR code for the master 
+public key, then scan it from the Electrum app for Android to create a watch-only
+wallet. The watch-only wallet allows you to check your balance and history, prepare
+and broadcast transactions, but not sign transactions. If you only ever sign your
+transactions in cold-offline mode and never otherwise compromise your secret master 
+private key, your funds cannot be stolen by a network attack. Since this version of 
+Bitkey includes webcam support, you may use the cam to scan the QR code of the prepared
+transaction for signing, thus never exposing Bitkey or your wallet to harmful files.
+For more information, refer to http://docs.electrum.org/en/latest/coldstorage.html
 
 Medium security - Hot-online boot mode (red background)
 -------------------------------------------------------
@@ -382,6 +410,12 @@ Specifics:
   from leaking information to the network, even in online mode on a non
   airgapped computer.
 
+- Webcam enabled for QR code scanning so no physical media communication is
+  required. This allows your private keys to remain perfectly secret, aside
+  from a BIOS attack. You should only communicate through QR codes, no USB
+  drives aside from the one containing the keys. Verify the QR codes' contents
+  at every exchange to make sure no malware is acting. 
+
 - All included components are open source
 
 - Best effort to verify integrity of source components
@@ -407,7 +441,7 @@ BitKey is built with `TKLDev`_, the TurnKey GNU/Linux build system.
 
 	ssh tkldev
 	cd products
-	git-clone https://github.com/bitkey/bitkey
+	git-clone https://github.com/estevaocm/bitkey
 
 	cd bitkey
 	make
