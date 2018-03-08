@@ -459,11 +459,11 @@ How to build from source
 BitKey is built with `TKLDev`_, the TurnKey GNU/Linux build system.
 
 1) Deploy TKLDev (e.g., as a local VM)
-2) SSH into TKLDev and clone bitkey git repo::
+2) SSH into TKLDev and (shallow) clone bitkey git repo::
 
 	ssh tkldev
 	cd products
-	git-clone https://github.com/bitkey/bitkey
+	git-clone --depth 1 https://github.com/bitkey/bitkey
 
 	cd bitkey
 	make
