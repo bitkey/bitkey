@@ -1,0 +1,66 @@
+#!/bin/bash -e
+
+HELP=/usr/local/share/doc/bitkey-help
+LIB=/usr/local/lib
+SHARE=/usr/local/share
+SRC=/usr/local/src
+
+cd $SRC
+
+#tar -zxf zxcvbn/libs.tar.gz -C $SRC/zxcvbn
+#rm $SRC/zxcvbn/libs.tar.gz
+mv zxcvbn/ $SHARE/zxcvbn/
+
+tar -zxf qrcode/libs.tar.gz -C $SRC/qrcode
+rm $SRC/qrcode/libs.tar.gz
+mv qrcode/ $SHARE/qrcode/
+
+unzip monero-wallet-generator*.zip
+rm monero-wallet-generator*.zip
+mv monero-wallet-generator-master/ $SHARE/monero-wallet-generator/
+
+unzip bip39-*.zip
+rm bip39-*.zip
+mkdir $SHARE/bip39/
+mv bip39-standalone.html $SHARE/bip39/
+
+unzip ripple-wallet-*.zip
+rm ripple-wallet-*.zip
+mv ripple-wallet*/ $SHARE/ripple-wallet/
+
+unzip minimalist-ripple-client*.zip
+rm minimalist-ripple-client*.zip
+mkdir $SHARE/minripple/
+mv minimalist-ripple-client.html $SHARE/minripple/
+
+mkdir $SHARE/iotapaperwallet
+unzip iota-paper-wallet*.zip -d $SHARE/iotapaperwallet 
+rm iota-paper-wallet*.zip
+
+unzip iota-seedgen*.zip
+rm iota-seedgen*.zip
+mv seedgen-master/ $SHARE/iotaseedgen/
+
+unzip bitaddress.org*.zip
+rm bitaddress.org*.zip
+mv bitaddress.org*/ $SHARE/bitaddress.org/
+
+unzip bitcoinpaperwallet*.zip
+rm bitcoinpaperwallet*.zip
+mv bitcoinpaperwallet*/ $SHARE/bitcoinpaperwallet/
+
+mkdir $SHARE/warpwallet/
+unzip warp_*.zip
+rm warp_*.zip
+cp warp_*.html $SHARE/warpwallet/warpwallet.html
+
+unzip coinbin*.zip
+rm coinbin*.zip
+mv coinbin*/ $SHARE/coinbin/
+
+unzip etherwallet*.zip
+mv etherwallet*/ $SHARE/myetherwallet/
+rm etherwallet*.zip
+
+tar -zxf $HELP/assets.tar.gz -C $HELP
+rm $HELP/assets.tar.gz

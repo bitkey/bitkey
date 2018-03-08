@@ -45,4 +45,7 @@ printer-driver-pxljr
 printer-driver-sag-gdi
 printer-driver-splix
 cups-browsed
-avahi-daemon 
+avahi-daemon
+
+libgconf-2-4
+

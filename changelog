@@ -1,3 +1,140 @@
+ -- Steven Monteiro <https://github.com/estevaocm> Mon, 08 Jan 2018
+ 
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.09 (1) turnkey; urgency=low
+  * Upgraded:
+  	- BIP39 wallet 0.3.3
+  	- Electrum 3.0.6
+  	- Electrum-DASH 2.9.3.2
+  	- Electrum-LTC 3.0.6.2
+  	- Exodus 1.45.0
+  	- MyEtherWallet 3.20.01
+  	- Ripple Wallet 1.2.4
+  
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.09 (1) turnkey; urgency=low
+  * Upgraded:
+    - Electron Cash 3.1.2
+    - Electrum 3.0.5
+    - Electrum-LTC 3.0.5.1
+    - MyEtherWallet 3.11.2
+ 
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.08 (1) turnkey; urgency=low
+ 
+  * Added:
+    - App packages checksum verification during system build
+    - Missing signature files that could be found
+    - CryptoSeed 1.1.0
+	- Electrum-Dash (commit #6e51b7d, 2017-05-30)
+    - Ripple Wallet compatible with BIP44 private key from BIP39 seed
+  * Fixed:
+    - All app packages are identified by either version number or Github commit ID and date.
+  * Upgraded:
+  	- BIP39 Wallet 0.3.2
+  	- Bitcoin Paper Wallet #6161c39 2017-09-22
+  	- Coinb.in #c3b1a47 2018-01-06
+    - Electron Cash 3.1.1
+    - Electrum 3.0.4
+    - Electrum-LTC 3.0.4.1
+    - IOTA Seed Generator #faaae0c 2017-06-27
+    - MyEtherWallet 3.11.1.7
+    - Warp Wallet 1.0.9
+ 
+ -- Steven Monteiro <https://github.com/estevaocm> Tue, 26 Dec 2017
+ 
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.07 (1) turnkey; urgency=low
+ 
+  * Added Monero wallet generator
+  * Fixed Coinb.in for online use
+ 
+ -- Steven Monteiro <https://github.com/estevaocm> Mon, 25 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.06 (1) turnkey; urgency=low
+
+  * Upgraded Chromium browser to version 63
+  * Removed Firefox browser
+  * Organized apps to install to either /usr/local/lib (compiled)
+    or /usr/local/share (interpreted)
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Thu, 21 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.05 (1) turnkey; urgency=low
+
+  * Added:
+    - Iota Paper Wallet
+    - Iota Seed Generator
+  	- Minimalist Ripple Client
+  * Modified:
+  	- Exodus wallet available offline for watching
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Fri, 15 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.04 (1) turnkey; urgency=low
+
+  * Added:
+  	- Exodus online wallet (thanks to emartec)
+  	- Launcher page aggregating all offline JavaScript apps
+  * Modified:
+  	- Smaller wbar icons
+  * Upgraded:
+  	- electrum-ltc-2017-12-14-4546320 
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Thu, 14 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.03 (1) turnkey; urgency=low
+
+  * Added:
+  	- bip39-standalone-ab1bd64
+  	- firefox-57.0.2
+  * Upgrades:
+  	- Electrum-3.0.3
+  	- electrum-ltc-2017-12-11-d088f56
+  	- etherwallet-v3.10.10.0
+  	- coinbin-2017-12-09-64af126
+  	- bitaddress.org-3.3.0
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Sun, 10 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.02 (1) turnkey; urgency=low
+
+  * Electrum-LTC upgraded to 3.0.2 from Git to fix QR scanning.
+    Note that the stable release of Electrum-LTC is not available yet.
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Sat, 09 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.01 (1) turnkey; urgency=low
+
+  * Electron Cash upgraded to 3.0.
+  * qtqr added, replacing WebQR.
+  * zbar-tools added
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Fri, 08 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins-1.0 (1) turnkey; urgency=low
+
+  * Electrum-LTC, Electron Cash, MEW and QR scanner included in menu
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Thu, 07 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-altcoins (1) turnkey; urgency=low
+
+  * Fixed Electrum-LTC
+  * Fixed Electron Cash
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Wed, 06 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan-ether (1) turnkey; urgency=low
+
+  * Added MyEtherWallet  
+  * Added Electrum-LTC (compilation errors to fix)
+  * Added Electron (runtime errors to fix)
+  
+ -- Steven Monteiro <https://github.com/estevaocm> Fri, 01 Dec 2017
+
+turnkey-bitkey-14.2.0-qrscan (1) turnkey; urgency=low
+
+  * Upgraded Electrum to 3.0.2
+  * Added webcam support through packages cheese and zbar
+  * Added generic web QR scanner
+
 turnkey-bitkey-14.2.0 (1) turnkey; urgency=low
 
   * Upgraded base distribution to Debian Jessie 8.8
