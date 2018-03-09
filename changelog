@@ -1,6 +1,6 @@
  -- Steven Monteiro <https://github.com/estevaocm> Mon, 08 Jan 2018
  
- turnkey-bitkey-14.2.0-qrscan-altcoins-1.09 (1) turnkey; urgency=low
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.10 (1) turnkey; urgency=low
   * Upgraded:
   	- BIP39 wallet 0.3.3
   	- Electrum 3.0.6
