@@ -56,7 +56,7 @@ i: /usr/share/icons/Adwaita/48x48/emblems/emblem-readonly.png
 c: cryptoseed
 t: CryptoSeed
 
-i: /usr/share/icons/hicolor/128x128/apps/keypassx.png
+i: /usr/share/icons/hicolor/128x128/apps/keepassx.png
 c: keepassx
 t: KeePassX
 
