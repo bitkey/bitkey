@@ -27,3 +27,5 @@ secure-delete
 
 florence                /* onscreen keyboard */
 at-spi2-core            /* required for florence */
+
+keepassx				/* as per feature request #52 */
