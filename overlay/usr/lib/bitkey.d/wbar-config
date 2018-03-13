@@ -57,8 +57,8 @@ c: cryptoseed
 t: CryptoSeed
 
 i: /usr/share/icons/hicolor/128x128/apps/keepassx.png
-c: keepassx
-t: KeePassX
+c: keepassxc
+t: KeePassXC
 
 i: /usr/share/icons/gnome/48x48/apps/terminal.png
 c: mrxvt

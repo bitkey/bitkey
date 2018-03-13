@@ -69,5 +69,5 @@ sudo ln -s $LIB/cryptoseed/cryptoseed /usr/local/bin/cryptoseed
 sudo chmod +x /usr/local/bin/cryptoseed
 
 # install keepassxc
-sudo dpkg -i keepassxc_2.2.4-1_amd64_oldstable_jessie.deb
+sudo dpkg -i keepassxc*.deb
 rm keepassxc*.deb
