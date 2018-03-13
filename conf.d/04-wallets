@@ -67,3 +67,7 @@ rm CryptoSeed*.zip
 mv CryptoSeed*/ $LIB/cryptoseed/
 sudo ln -s $LIB/cryptoseed/cryptoseed /usr/local/bin/cryptoseed
 sudo chmod +x /usr/local/bin/cryptoseed
+
+# install keepassxc
+sudo dpkg -i keepassxc_2.2.4-1_amd64_oldstable_jessie.deb
+rm keepassxc*.deb
