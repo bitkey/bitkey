@@ -56,6 +56,7 @@ Apps that are allowed network access in online mode:
 - QtQR for QR code scanning with webcam
 - zbar-tools as an alternative to QtQR
 - Exodus multi-coin wallet, which includes exchanging with ShapeShift
+  (WARNING: not 100% open source)
 - CryptoSeed
 
 Apps that are not allowed network access even in online mode:
