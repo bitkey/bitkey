@@ -306,11 +306,11 @@ Signing transaction step
    - Open Signed transaction in text editor
    - Open qrcode app: cut and paste hex of signed transaction
 
-8) Scan qrcode of signed transaction with phone and broadcast
+8) Scan QRCode of signed transaction with phone and broadcast
    transaction to network.
 
-9) Turn off BitKey, disconnect power source, wait 15 minutes to clear
-   RAM
+9) Turn off BitKey as soon as the QRCode is scanned, 
+   disconnect power source, wait 15 minutes to clear RAM
 
 Desktop usage tips (Keyboard and mouse shortcuts)
 =================================================
