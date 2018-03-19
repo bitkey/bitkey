@@ -46,32 +46,32 @@ Apps that are allowed network access in online mode:
 - Electrum with wrapper that stores wallet on a USB in a LUKS encrypted
   loopback filesystem. During creation, displays passphrase strength
   estimates such as entropy and crack time.
-- Electrum-LTC for Litecoin
-- Electron-Cash for Bitcoin Cash (BCH)
-- Electrum-DASH for DASH
-- QtQR for QR code scanning with webcam
-- zbar-tools as an alternative to QtQR
-- Exodus multi-coin wallet, which includes exchanging with ShapeShift
-- CryptoSeed
-- KeePassXC
+- Electrum-LTC for Litecoin (with wrapper)
+- Electron-Cash for Bitcoin Cash (with wrapper)
+- Electrum-DASH for DASH (with wrapper)
+- QtQR: allows QR code scanning from webcam
+- zbar-tools: alternative for QtQR
+- Exodus: multi-coin wallet, including ShapeShift exchanging (NOT OPEN SOURCE)
+- CryptoSeed: encryption for paper wallets
+- KeePassXC: password manager
 - Online Web apps:
 
-  - MyEtherWallet: also allows offline signing
+  - MyEtherWallet
   - Ripple Wallet
   - Minimalistic Ripple Wallet
   - Coinb.in: swiss army knife of bitcoin tools
 
 Offline Web apps (not allowed network access even in online mode):
 
-- qrcode generator: encodes anything as a qrcode
-- BIP39 Mnemonic Code Converter: paper wallet seeds for 32 cryptocurrencies
-- Monero paper wallet
-- IOTA seed generator
-- IOTA paper wallet
-- zxcvbn: realistic password strength estimator
-- warpwallet: brainwallet with strong KDF (scrypt+pbkdf2) and salt
+- BIP39 Mnemonic Code Converter: paper wallet seeds for 30+ cryptocurrencies (BIP39, BIP32, BIP44, BIP49, BIP84, BIP141)
 - bitaddress: paper wallet generator
 - bitcoinpaperwallet: paper wallet generator
+- IOTA paper wallet
+- IOTA seed generator
+- Monero paper wallet
+- qrcode generator: encodes anything as a qrcode
+- warpwallet: brainwallet with strong KDF (scrypt+pbkdf2) and salt
+- zxcvbn: realistic password strength estimator
 
 Advanced tools for Bitcoin ninjas:
 
