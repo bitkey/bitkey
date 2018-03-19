@@ -49,16 +49,19 @@ Apps that are allowed network access in online mode:
 - Electrum-LTC for Litecoin
 - Electron-Cash for Bitcoin Cash (BCH)
 - Electrum-DASH for DASH
-- MyEtherWallet: also allows offline signing
-- Ripple Wallet
-- Minimalistic Ripple Wallet
-- Coinb.in: swiss army knife of bitcoin tools
 - QtQR for QR code scanning with webcam
 - zbar-tools as an alternative to QtQR
 - Exodus multi-coin wallet, which includes exchanging with ShapeShift
 - CryptoSeed
+- KeePassXC
+- Online Web apps:
 
-Apps that are not allowed network access even in online mode:
+  - MyEtherWallet: also allows offline signing
+  - Ripple Wallet
+  - Minimalistic Ripple Wallet
+  - Coinb.in: swiss army knife of bitcoin tools
+
+Offline Web apps (not allowed network access even in online mode):
 
 - qrcode generator: encodes anything as a qrcode
 - BIP39 Mnemonic Code Converter: paper wallet seeds for 32 cryptocurrencies
