@@ -309,7 +309,7 @@ Signing transaction step
 8) Scan QRCode of signed transaction with phone and broadcast
    transaction to network.
 
-9) Turn off BitKey as soon as the QRCode is scanned, 
+9) Turn off BitKey as soon as the QRCode has been scanned, 
    disconnect power source, wait 15 minutes to clear RAM
 
 Desktop usage tips (Keyboard and mouse shortcuts)
