@@ -1,6 +1,6 @@
  -- Steven Monteiro <https://github.com/estevaocm> Mon, 08 Jan 2018
 
- turnkey-bitkey-14.2.0-qrscan-altcoins-1.12 (1) turnkey; urgency=low
+ turnkey-bitkey-14.2.0-community-1.12 (1) turnkey; urgency=low
   * Added:
     - keepassxc
   * Upgraded:
