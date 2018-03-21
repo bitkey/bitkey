@@ -1,5 +1,13 @@
  -- Steven Monteiro <https://github.com/estevaocm> Mon, 08 Jan 2018
 
+ turnkey-bitkey-14.2.0-qrscan-altcoins-1.12 (1) turnkey; urgency=low
+  * Added:
+    - keepassxc
+  * Upgraded:
+	- Electrum 3.1.1 
+    - MyEtherWallet 3.21.01
+    - BIP39 wallet 0.3.4  
+ 
  turnkey-bitkey-14.2.0-qrscan-altcoins-1.11 (1) turnkey; urgency=low
   * Added KeePassX
   * Upgraded Electrum 3.1
