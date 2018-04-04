@@ -28,6 +28,10 @@ i: /usr/local/share/icons/exodus.png
 c: exodus-wrapper >/dev/null
 t: Exodus
 
+i: /usr/local/share/icons/armoryicon.png
+c: armory-wrapper >/dev/null
+t: Armory ($mode)
+
 i: /usr/local/share/icons/paper-wallet.png
 c: chromium-offline-app file:///usr/local/share/cryptojsappslauncher/offline.html
 t: Offline Web Apps
