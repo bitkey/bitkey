@@ -31,3 +31,6 @@ at-spi2-core            /* required for florence */
 keepassx				/* as per feature request #52 */
 libqt5x11extras5		/* dependency for keepassxc */
 libykpers-1-1			/* dependency for keepassxc */
+
+python-psutil			/* dependency for armory */
+libstdc++6			/* dependency for armory */
