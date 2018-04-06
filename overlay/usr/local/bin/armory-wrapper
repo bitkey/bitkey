@@ -120,7 +120,7 @@ armory --offline --datadir=$wallet_path
 
 # setup info dialog
 infofile=$(tempfile)
-info-dialog --title="electrum-wrapper" $infofile &
+info-dialog --title="armory-wrapper" $infofile &
 trap "rm -f -- '$infofile'" INT TERM EXIT
 
 #echo seedless watch wallet is disabled for lack of the deseed function
