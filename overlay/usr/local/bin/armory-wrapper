@@ -1,0 +1,145 @@
+#!/bin/bash -e
+
+fatal() {
+    zenity --error --text "$@"
+    exit 1
+}
+
+usage() {
+    echo "syntax: $(basename $0)"
+    exit 1
+}
+
+info() {
+    echo -n "$@" > $infofile
+}
+
+locate_storage_path() {
+    dirname=$1
+    filename=$2
+    for d in $(ls /media); do
+        storage_path="/media/$d/$dirname"
+        if [ -e $storage_path/$filename ] && [ -w $storage_path/$filename ]; then
+            echo $storage_path
+            return
+        fi
+    done
+
+    for d in $(ls /media); do
+        storage_path="/media/$d/$dirname"
+        if [ -d $storage_path ] && [ -w $storage_path ]; then
+            echo $storage_path
+            return
+        fi
+    done
+
+    for d in $(ls /media); do
+        storage_path="/media/$d/$dirname"
+        if mountpoint -q /media/$d && [ -w "/media/$d" ]; then
+            mkdir -p $storage_path
+            echo $storage_path
+            return
+        fi
+    done
+}
+
+if [[ "$#" != "0" ]]; then
+    usage
+fi
+
+storage_dirname="bitkey-data"
+mount_path="/mnt/bitkey-data"
+
+mode="armory"
+
+# verify armory isn't running
+if pidof -x armory >/dev/null; then
+    fatal "Armory is already running..."
+fi
+
+# verify (another) armory-wrapper isn't running
+if pidof -x armory-wrapper -o %PPID >/dev/null; then
+    fatal "Armory-wrapper is already running..."
+fi
+
+# verify mount_path isn't in use
+if mountpoint -q $mount_path; then
+    fatal "$mount_path is currently in use...\nTip: sudo luks-umount $mount_path"
+fi
+
+# setup info dialog
+infofile=$(tempfile)
+info "loading..."
+info-dialog --title="armory-wrapper" $infofile &
+trap "rm -f -- '$infofile'" INT TERM EXIT
+
+# locate and setup storage
+info "searching for persistent storage..."
+storage_path=$(locate_storage_path $storage_dirname $mode)
+storage_file=$storage_path/$mode
+
+if [ -z $storage_path ]; then
+    error="Unable to locate USB device to use as persistent storage.\n"
+    error+="Please insert a USB device and try again."
+    fatal "$error"
+fi
+
+# create and or mount encrypted storage (cold-offline / hot-online)
+passwd_text="Enter passphrase for encrypted wallet storage:\n$storage_file"
+if [ ! -e "$storage_file" ]; then
+    passwd=$(passphrase-zxcvbn --confirm --text="$passwd_text")
+
+    info "creating $storage_file loopback..."
+    dd if=/dev/zero of=$storage_file bs=1M count=5
+
+    info "creating $storage_file filesystem..."
+    echo $passwd | sudo luks-mkfs -f --fs=ext2 $storage_file
+
+    info "mounting $storage_file..."
+    echo $passwd | sudo luks-mount $storage_file $mount_path
+
+else
+    error=""
+    while true; do
+        passwd=$(passphrase-zxcvbn --hide --text="$passwd_text" --error="$error")
+        info "attempting to mount $storage_file ..."
+        if echo $passwd | sudo luks-mount $storage_file $mount_path; then
+            break
+        fi
+        error="Invalid passphrase, please try again"
+    done
+fi
+
+# close info dialog
+rm -f $infofile
+
+# start Armory in foreground
+sudo chown -R user:user $mount_path
+wallet_path=$mount_path/$mode
+armory --offline --datadir=$wallet_path
+
+# setup info dialog
+infofile=$(tempfile)
+info-dialog --title="armory-wrapper" $infofile &
+trap "rm -f -- '$infofile'" INT TERM EXIT
+
+#echo seedless watch wallet is disabled for lack of the deseed function
+# create seedless watch wallet (cold-online)
+#if [ -e "$wallet_path" ] && [ ! -e "$storage_path/cold-online" ]; then
+    #info "creating $storage_path/cold-online..."
+    #echo y | electrum deseed -w $wallet_path
+    #mv $wallet_path.seedless $storage_path/cold-online
+#fi
+
+# umount encrypted storage
+info "syncing filesystem..."
+sync && sleep 2
+
+info "umounting encrypted storage..."
+while true; do
+    if sudo luks-umount $mount_path; then
+        break
+    fi
+    zenity --error --text "unable to unmount encrypted storage. please close all programs that may be blocking."
+done
+
