@@ -73,5 +73,5 @@ sudo dpkg -i keepassxc*.deb
 rm keepassxc*.deb
 
 # install electrum
-sudo dpkg -i armory_*.deb
-rm armory_*.deb
+sudo dpkg -i armory*.deb
+rm armory*.deb

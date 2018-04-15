@@ -64,3 +64,7 @@ rm etherwallet*.zip
 
 tar -zxf $HELP/assets.tar.gz -C $HELP
 rm $HELP/assets.tar.gz
+
+unzip base43js*.zip
+mv base43js*/ $SHARE/base43js/
+rm base43js*.zip
