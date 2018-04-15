@@ -49,6 +49,7 @@ Apps that are allowed network access in online mode:
 - Electrum-LTC for Litecoin (with wrapper)
 - Electron-Cash for Bitcoin Cash (with wrapper)
 - Electrum-DASH for DASH (with wrapper)
+- Armory Wallet (with wrapper)
 - QtQR: allows QR code scanning from webcam
 - zbar-tools: alternative for QtQR
 - Exodus: multi-coin wallet, including ShapeShift exchanging (NOT OPEN SOURCE)
@@ -63,6 +64,7 @@ Apps that are allowed network access in online mode:
 
 Offline Web apps (not allowed network access even in online mode):
 
+- Base43 decoder: decodes the strings from Electrum QR codes
 - BIP39 Mnemonic Code Converter: paper wallet seeds for 30+ cryptocurrencies (BIP39, BIP32, BIP44, BIP49, BIP84, BIP141)
 - bitaddress: paper wallet generator
 - bitcoinpaperwallet: paper wallet generator
