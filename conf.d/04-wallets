@@ -72,6 +72,6 @@ sudo chmod +x /usr/local/bin/cryptoseed
 sudo dpkg -i keepassxc*.deb
 rm keepassxc*.deb
 
-# install electrum
+# install armory
 sudo dpkg -i armory*.deb
 rm armory*.deb
