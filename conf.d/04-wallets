@@ -37,6 +37,14 @@ pyrcc4 $SHARE/electrum-dash/icons.qrc -o $SHARE/electrum-dash/gui/qt/icons_rc.py
 sudo ln -s $SHARE/electrum-dash/electrum-dash /usr/local/bin/electrum-dash
 sudo chmod +x /usr/local/bin/electrum-dash
 
+# install electrum dependency python-typing
+tar -zxf typing-*.tar.gz
+rm typing-*.tar.gz
+mv typing-*/ $SHARE/python-typing/
+cd $SHARE/python-typing
+sudo python3 setup.py install
+cd $SRC
+
 # unpack electrum
 tar -zxf Electrum-*.tar.gz
 rm Electrum-*.tar.gz
