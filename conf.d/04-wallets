@@ -37,6 +37,16 @@ pyrcc4 $SHARE/electrum-dash/icons.qrc -o $SHARE/electrum-dash/gui/qt/icons_rc.py
 sudo ln -s $SHARE/electrum-dash/electrum-dash /usr/local/bin/electrum-dash
 sudo chmod +x /usr/local/bin/electrum-dash
 
+# unpack TREZOR Python library
+tar -zxf trezor-*.tar.gz
+rm trezor-*.tar.gz
+
+# install TREZOR Python library
+cd trezor-*
+python setup.py install
+cd -
+rm -r trezor-*
+
 # unpack electrum
 tar -zxf Electrum-*.tar.gz
 rm Electrum-*.tar.gz
